@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Plate Documentation - {{ page.title }}</title>
+
+  <meta name="description" content="Plate Documentation">
+  <meta name="author" content="Plate">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/sidebar.css">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Plate Documentation</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="wrapper" class="toggled">
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><a href="/docs/getting-started">Getting Started</a></li>
+        <li>
+          <a href="/docs/content-types">Content Types</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="page-content-wrapper">
+      {{ content }}
+    </div>
+  </div>
+</body>
+</html>
