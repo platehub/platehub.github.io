@@ -2,6 +2,7 @@
 layout: docs
 title: Introduction
 permalink: /docs/
+order: 1
 ---
 
 # Introduction

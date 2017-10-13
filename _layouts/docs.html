@@ -14,8 +14,8 @@
   <meta name="robots" content="index, follow">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/sidebar.css">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/css/sidebar.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -43,10 +43,19 @@
   <div id="wrapper" class="toggled">
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li><a href="/docs/getting-started">Getting Started</a></li>
-        <li>
-          <a href="/docs/content-types">Content Types</a>
-        </li>
+        {%- assign doc_pages = site.pages | where: "layout","docs" | sort: "order" -%}
+        {%- for doc_page in doc_pages -%}
+          <li>
+            <a href="{{ doc_page.permalink }}">{{ doc_page.title }}</a>
+            {%- if page.permalink == doc_page.permalink and doc_page.sub_menu -%}
+              <ul>
+                {%- for sub_menu_item in doc_page.sub_menu -%}
+                  <li>{{ sub_menu_item | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
       </ul>
     </div>
 
