@@ -35,8 +35,8 @@ These are used to define the content type inside the templating engine. These ha
 #### Icon name
 This is the icon that is used along with the titles in the edit screens.
 
-#### Slug (Post type)
-For Post types you have to type in the slug for each language your theme preview site is available in. The slug is the word that will be the first part of the url that for the post: `/:content-type-slug/:object-slug`. For example, in the case of the post type Categories: `/categories/cats-and-dogs`. In this case, `categories` is the slug for the Categories post type, `cats-and-dogs` the slug for the post (object with post type 'Category').
+#### Slug (only Post type)
+For Post types you have to type in the slug for each language your theme preview site is available in. The slug is the word that will be the first part of the url for the post: `/:content-type-slug/:object-slug`. For example, in the case of the post type Categories: `/categories/cats-and-dogs`. In this case, `categories` is the slug for the Categories post type, `cats-and-dogs` the slug for the post (object with post type 'Category').
 
 #### Example
 Let's say you want to make a 'Colored Button' element content type. You'll fill out the following data:
@@ -46,13 +46,13 @@ Let's say you want to make a 'Colored Button' element content type. You'll fill 
 - Plural name for id: `colored_buttons`
 - Icon: `crop_16_9`. This Material icon doesn't have anything to do with buttons, but it kinda looks like a button, so...
 
-Now the end user can create actual Colored Button elements. How these buttons look like is up to you: you'll probably need to add [content fields](/docs/content-fields) to them, and have to create a theme file for it: `colored_buttons/colored_button.plate`
+Now the end user can create actual Colored Button elements. How these buttons look like is up to you: you'll probably need to add [content fields](/docs/content-fields) to them, and have to create a theme file for it in your theme: `colored_buttons/_colored_button.plate`
 
 
 ## Creating Content Types
 - Click on the Content Types menu item in the Site Dashboard
 - Click on the floating Add button
-- Pick a kind of content type (see above)
+- Pick a kind of content type (Element type or Post type)
 
 <img src="/assets/img/content-types-1.png" width="800">
 
