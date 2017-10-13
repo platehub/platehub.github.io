@@ -8,8 +8,6 @@ sub_menu:
 order: 3
 ---
 
-# Content types
-
 Every editable content object in Plate is basically an abstract object with no atttributes or fields. You will grant the abstract object editable content by defining a content type for it and adding editable [content fields](/docs/content-fields). Plate also adds some default content fields, depending on the content type.
 
 ## About Content Types
@@ -17,10 +15,10 @@ Every editable content object in Plate is basically an abstract object with no a
 Plate recognizes two kinds of content types:
 
 #### Inline elements (Element types)
-Editable inline elements with partials as theme files. Only addable as elements inside the `content_for` tag. E.g. images, galleries, editable texts, etc.
+Editable inline elements with partials as theme files. Represented by the `Content Element` in the [Plate Nested Layout Structure](/docs/getting-started#the-plate-nested-layout-structure). E.g. images, galleries, editable texts, etc.
 
-#### Layoutable posts (Post types)
-Objects with it's own layout theme file and approachable via a url. E.g. pages, categories, blog posts, etc.
+#### [Layoutable](/docs/theme-files#what-is-layoutable-content) posts (Post types)
+Objects that are approachable via a url. E.g. pages, categories, blog posts, etc. their theme files inherit directly from a theme layout. It has two different templates: `index` and `show`. The role of `index` is that of an overview page, `show` the detail page. However, `index` is a single page too, but with the `index.plate` theme file. This way users can change the same attributes for overview pages as detail pages, like header photos etc. Layoutable content types (post types) have URL's based on their on their objects' [slugs](#slug-only-post-type).
 
 Both content types' objects can be referenced in the reference content field.
 
@@ -36,7 +34,9 @@ These are used to define the content type inside the templating engine. These ha
 This is the icon that is used along with the titles in the edit screens.
 
 #### Slug (only Post type)
-For Post types you have to type in the slug for each language your theme preview site is available in. The slug is the word that will be the first part of the url for the post: `/:content-type-slug/:object-slug`. For example, in the case of the post type Categories: `/categories/cats-and-dogs`. In this case, `categories` is the slug for the Categories post type, `cats-and-dogs` the slug for the post (object with post type 'Category').
+For Post types you have to type in the slug for each language your site is available in. The slug is the word that will be the first part of the url for the post: `/:content-type-slug/:object-slug`. For example, in the case of the post type Categories: `/categories/cats-and-dogs`. In this case, `categories` is the slug for the Categories post type, `cats-and-dogs` the slug for the post (object with post type 'Category').
+
+A site always has a root post type (usually Page) that hides the post type's slug from the url. That means that `/` and `/page-slug` work, and Plate recognizes 'Page' as the selected Post type.
 
 #### Example
 Let's say you want to make a 'Colored Button' element content type. You'll fill out the following data:
@@ -56,6 +56,6 @@ Now the end user can create actual Colored Button elements. How these buttons lo
 
 <img src="/assets/img/content-types-1.png" width="800">
 
-Fill out the neccessary fields (see [About Content Types](#about-content-types) to learn more about the functions of this data).
+Fill out the necessary fields (see [About Content Types](#about-content-types) to learn more about the functions of this data).
 
 <img src="/assets/img/content-types-2.png" width="800">

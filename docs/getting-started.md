@@ -3,18 +3,16 @@ layout: docs
 title: Getting Started
 permalink: /docs/getting-started
 sub_menu:
-  - "[How does Plate work?](#how-does-plate-work)"
+  - "[Nested Layout Structure](#the-plate-nested-layout-structure)"
   - "[Plate themes](#plate-themes)"
 order: 2
 ---
 
-# Getting started
+Plate is a frontend-based Content Management System (CMS) that offers clean simplicity in terms of content editing; the user does not have to manage his content in a backend, but edits it inline. That is what makes Plate truly WYSIWYG.
 
-Getting started as a developer for Plate.
+## The Plate Nested Layout Structure
 
-## How does Plate work?
-
-Plate is a frontend-based Content Management System (CMS) that offers clean simplicity in terms of content editing; the user does not have to manage his content in a backend, but edits it inline. That is what makes Plate truly WYSIWYG. The layout of a post in Plate is built out of the following nested layout components.
+The layout of a post in Plate is built out of the following nested layout components.
 
 `Post` > `Section` > `Row` > `Column` > `Content Element`
 

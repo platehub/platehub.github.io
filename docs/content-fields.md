@@ -11,8 +11,6 @@ sub_menu:
 order: 4
 ---
 
-# Content Fields
-
 After you create a [content type](/docs/content-types) you need to add fields to it, so the user can add his content to the object.
 
 ## Name and ID
@@ -20,7 +18,7 @@ After you create a [content type](/docs/content-types) you need to add fields to
 Content fields have a `name` and an `id`. The name is used as the label above the field in the edit screens. The id is the key that is used as an attribute to call on the object variable in the theme files. In the example of the 'Colored Button' [content type](/docs/content-types), you could add a field for the background color of the button.
 <img src="/assets/img/content-fields-name-id-1.png">
 
-In the user's edit screen it would say 'Background color of the button' above the field. In the theme file (`colored_buttons/_colored_button.plate`) you would use `colored_button.bg_color` to call the contents of the field. In this case, `colored_button` being the object with the 'Colored button' [content type](/docs/content-types), and `bg_color` being the field id and attribute name for colored_button.
+In the user's edit screen for a colored button it would say 'Background color of the button' above the field. In the theme file (`colored_buttons/_colored_button.plate`) you would use `colored_button.bg_color` to call the contents of the field. In this case, `colored_button` being the object with the 'Colored button' [content type](/docs/content-types), and `bg_color` being the field id and attribute name for colored_button.
 
 ## Content Field kinds
 
@@ -65,15 +63,15 @@ You alse need to pick a so-called 'Context' for the Reference field. You can cho
 The user can pick an object from a list of existing objects that belong to the designated content type, or create a new one. This context is used if you need to add one or more authors to a news article, for example. The same authors are added to other news articles, and those references need to link to the same object.
 
 #### Local context
-Everytime the user adds a reference, a new object of the designated content type gets created. Let's stick with the example of the image gallery: every time a gallery gets added a gallery item, a new record needs to be created, since other galleries do not need to reference that exact object.
+Everytime the user adds a reference, a new object of the designated content type gets created. Let's stick with the example of the image gallery: every time a gallery gets added a gallery item, a new record needs to be created, since other galleries do not need to reference that exact same object.
 
 <img src="/assets/img/content-fields-references-2.png">
 
-The distinction between these two contexts was made to prevent multiple objects with the exact same attributes being created. In the case of the author for news articles, every news article that has a reference to an author object references to the same object. If an attribute for the author changes, e.g. the author's age, this change needs to be reflected in every reference to the author. So before picking a context, ask yourself: 'can there be multiple references to the same object in my project?' If so, pick global. If not, pick local.
+The distinction between these two contexts was made to prevent multiple objects with the exact same attributes being created. In the case of the author for news articles, every news article that has a reference to a certain author, references to the same author object. If an attribute for the author changes, i.e. the author's age, this change needs to be reflected in every reference to the author. So before picking a context, ask yourself: 'can there be multiple references to the same object in my project?' If so, pick global. If not, pick local.
 
 ## Validation rules
 
-You can add validation rules to content fields. This means that end users filling in these fields must comply with these rules. If they do not, they cannot save the object they're editing/creating. The most commonly used validation rule is 'required', where the field must have a value before being savd. You can add the following Validation Rules:
+You can add validation rules to content fields. This means that end users filling in these fields must comply with these rules. If they do not, they cannot save the object they're editing/creating. The most commonly used validation rule is 'required', where the field must have a value before being savd. You can add the following validation Rules:
 
 #### The user is required to enter something in this field
 Speaks for itself.
@@ -120,3 +118,5 @@ The user must create a number of references that is between, greater than or low
 <img src="/assets/img/content-fields-creating-3.png" width="800">
 
 - Put in the field [name and id](#name-and-id) and validation rules of your choosing
+- Save
+- You can now call the content field id in the content type's theme file, and the user can put content in the field in the edit screens.
