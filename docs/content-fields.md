@@ -1,7 +1,9 @@
 ---
 layout: docs
 title: Content Fields
-permalink: /docs/content-fields
+page_url: /docs/content-fields
+menu_item: true
+id: "content-fields"
 sub_menu:
   - "[Name and ID](#name-and-id)"
   - "[Content Field kinds](#content-field-kinds)"

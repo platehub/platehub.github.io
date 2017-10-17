@@ -1,0 +1,25 @@
+{%- assign doc_pages = site.pages | where: "menu_item",true | sort: "order" -%}
+{%- for doc_page in doc_pages -%}
+  <li>
+    <a href="{{ doc_page.page_url }}">{{ doc_page.title }}</a>
+    {%- if include.page.id == doc_page.id and doc_page.sub_menu -%}
+      <ul>
+        {%- for sub_menu_item in include.page.sub_menu -%}
+          {%- if sub_menu_item == "include_sub_menu_sub" -%}
+            <li>
+              {% capture generated_sub_menu_item %}[{{include.page.title}}]({{include.page.page_url}}){% endcapture %}
+              {{ generated_sub_menu_item | markdownify | remove: "<p>" | remove: "</p>" }}
+              <ul>
+                {%- for sub_sub_menu_item in include.page.sub_menu_sub -%}
+                  <li>{{ sub_sub_menu_item | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+                {%- endfor -%}
+              </ul>
+            </li>
+          {%- else -%}
+            <li>{{ sub_menu_item | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </li>
+{%- endfor -%}

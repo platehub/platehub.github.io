@@ -1,7 +1,9 @@
 ---
 layout: docs
 title: Content Types
-permalink: /docs/content-types
+page_url: /docs/content-types
+menu_item: true
+id: "content-types"
 sub_menu:
   - "[About Content Types](#about-content-types)"
   - "[Creating Content Types](#creating-content-types)"

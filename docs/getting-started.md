@@ -1,7 +1,9 @@
 ---
 layout: docs
 title: Getting Started
-permalink: /docs/getting-started
+page_url: /docs/getting-started
+menu_item: true
+id: "getting-started"
 sub_menu:
   - "[Nested Layout Structure](#the-plate-nested-layout-structure)"
   - "[Plate themes](#plate-themes)"
@@ -26,11 +28,11 @@ Every Plate site uses a theme. Themes are made out of plain HTML/CSS/JS, and a t
 
 ### How to create a theme
 
-You can create an empty theme by going to your [partner dashboard](https://www.startwithplate.com/dashboard), and clicking on 'Themes' in the sidebar menu. Next click on 'Create New Theme'. To download the theme files after creating it, click on 'Download Theme'.
+You can create an empty theme by going to your [partner dashboard](https://www.startwithplate.com/dashboard), and clicking on 'Themes' in the sidebar menu. Next click on 'Create New Theme'. To download the theme files after creating it, click on 'Download Theme'. To continue working with your theme, check out [Themes & Theme files](/docs/theme-files).
 
 <img src="/assets/img/getting-started--themes-1.png" width="600"><img src="/assets/img/getting-started--themes-2.png" width="600">
 
-### What happens with your theme?
+### What happens with your theme when it is picked?
 When a user picks your theme, a site gets created with not only the theme files, but also the preview content and content types of your preview site. So make sure you keep your preview site just a preview site.
 
 A couple of tips to create a preview site:

@@ -1,7 +1,9 @@
 ---
 layout: docs
 title: Introduction
-permalink: /docs/
+page_url: /docs/
+menu_item: true
+id: "introduction"
 order: 1
 ---
 

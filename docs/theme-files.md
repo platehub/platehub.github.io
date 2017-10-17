@@ -1,7 +1,9 @@
 ---
 layout: docs
 title: Themes & Theme files
-permalink: /docs/theme-files
+page_url: /docs/theme-files
+menu_item: true
+id: "theme-files"
 sub_menu:
   - "[Inline or 'Layoutable'](#inline-or-layoutable)"
   - "[Theme file paths](#theme-file-paths)"
@@ -70,5 +72,20 @@ The layout theme files must always be placed in the `layouts` folder in the root
 **Heads up!** The Theme Layout is something else entirely than the [Plate Nested Layout structure](/docs/getting-started#the-plate-nested-layout-structure)!
 
 ## Trays
+Trays are the same as sections, and have the same nested layout components (Rows, and so on). The main difference from sections is that trays do not fall inside the Nested Layout Structure. Trays only belong to the site. This way you can add a nested Layout structure from the section level down on any place you want, not just inside a Post context. This is useful for footers and headers for example. You want to have the nested layout structure here, but it doesn't necessarily fall under a post.
+
+#### Tray theme files
+To use a tray, you need to create a (inline, so a [partial](#partials)) theme file for it inside the `trays` folder. The name of the theme file is the name of the tray. For example, creating the file `trays/_footer.plate` opens up the 'Footer' tray inside the [content types](/docs/content-types) dashboard, so you can add [content fields](/docs/content-fields) to it.
 
 ## Theme Templates
+Certain [inline content types](#what-is-inline-content), like sections, can have different versions. For example, a section can have a version with a slider in it, and a version with just content and a top padding of 60. These different versions are called templates. You can define templates by adding it in the theme files's filename, separated by a dot. Like this:
+
+`sections/_section.slider.plate`  
+`sections/_section.background_image.plate`  
+
+The names separated by the dot, in these cases 'slider' and 'background_image' are the template names. They pop up when adding [content fields](/content-fields) to the content type. When editing/creating a section you can choose a template, and the corresponding content fields will appear automatically to the user.
+<img src="/assets/img/theme-files--templates-1.png">
+
+As you can see there is also a 'Default section' template. This template corresponds to the `_sections/_section.plate` file name, so without a dot-separated template name. It's always a good idea to keep the 'default' template around. So in the case of the screenshot, there are two section theme files: `sections/_section.plate` and `sections/_section.cta.plate`.
+
+**Heads up!** Theme templates only work for sections, for now.
