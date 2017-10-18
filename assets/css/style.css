@@ -32,6 +32,11 @@ pre.highlight{
   margin-bottom:20px;
 }
 
+hr{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
 @media(min-width:1100px) {
   div.highlight{
     width:125%;

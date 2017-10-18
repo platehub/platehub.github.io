@@ -63,6 +63,8 @@ same as `error_msg`, but for the message when the form does send (request attrib
 </form>
 ```
 
+___
+
 ## content_for
 Content renderer for objects inside the Plate [Nested Layout Structure](/docs/getting-started#the-plate-nested-layout-structure): `Post`, `Section`, `Row`, `Column` and `Content Element`. This not only renders the content, but also makes sure the content is editable for the user in the site's edit mode, and adds HTML attributes for positioning so the content shows in the right place.
 
@@ -120,6 +122,8 @@ You can also add custom HTML attributes to the `render_content` tag inside the `
 </div>
 ```
 
+___
+
 ## edit_text_inline
 Renders regular HTML of a [text area](/docs/content-fields#text-area) value, but with an inline WYSIWYG html editor in the site's edit mode. Accepts the content field's name as an attribute.
 
@@ -134,6 +138,8 @@ Renders regular HTML of a [text area](/docs/content-fields#text-area) value, but
   <!-- WYSIWYG editable content -->
 </div>
 ```
+
+___
 
 ## form_field
 Input field for a form. Only works inside `contact_form` tag. The first argument is the Plate object that represents a field. The second argument is the field's attribute name that returns the input name. The third argument is the field's type, which must be one of `text`, `textarea` and `checkbox`.
@@ -150,6 +156,8 @@ Input field for a form. Only works inside `contact_form` tag. The first argument
 <input type="text" name="form_message[content][test_field]" id="3864_test_field">
 ```
 
+___
+
 ## form_label
 Label HTML tag for a form. Only works inside `contact_form` tag. Like `form_field`, the first argument is the Plate object that represents a field. The second argument is the field's attribute name that returns the label value.
 
@@ -163,6 +171,8 @@ Label HTML tag for a form. Only works inside `contact_form` tag. Like `form_fiel
 <label for="3864_test_field">Test Field</label>
 ```
 
+___
+
 ## form_sender_field
 Generates form input fields, but for the sender's data. This way Plate knows what field values represent the sender's name and email. Must also be called inside the `contact_form` tag. Accepts one argument, which must be one of two values: `sender_field_name` or `sender_field_email`.
 
@@ -175,6 +185,8 @@ Generates form input fields, but for the sender's data. This way Plate knows wha
 ```html
 <input type="text" name="form_message[meta][sender][email]" id="1876_sender_field_email">
 ```
+
+___
 
 ## include
 Overrides Liquid's include tag. Inserts a snippet of code from another file. The file must be a [partial](/docs/them-files#partial).
@@ -199,6 +211,8 @@ Assuming that the variable `field` is an object with the [content type](/docs/co
 {% raw %}{% include "field_lines/field_line", field_line: field_line %}{% endraw %}
 ```
 
+___
+
 ## layout
 Sets the [theme layout](/docs/theme-files#theme-layouts). Whatever you pass must be a layout theme file in the `layouts` folder.
 
@@ -212,6 +226,8 @@ This renders the `layouts/some_layout.plate` theme layout file.
 Using this tag is not required, the default layout is `theme` (`layouts/theme.plate`).
 
 **Don't forget to add the `{% raw %}{% include "content_for_head" %}{% endraw %}` tag in your theme layout file's `<head>`.**
+
+___
 
 ## tray
 Renders a [tray](/docs/theme-files#trays).

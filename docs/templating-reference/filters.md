@@ -10,10 +10,10 @@ sub_menu:
   - "[Objects](/docs/templating-reference/objects)"
 sub_menu_sub:
   - "[asset_url](#asset_url)"
-  - "[empty?](#?)"
+  - "[empty?](#empty)"
   - "[global_asset_url](#global_asset_url)"
   - "[img_tag](#img_tag)"
-  - "[not_empty?](#?)"
+  - "[not_empty?](#not_empty)"
   - "[parameterize](#parameterize)"
   - "[script_tag](#script_tag)"
   - "[stylesheet_tag](#stylesheet_tag)"
@@ -21,22 +21,195 @@ sub_menu_sub:
   - "[where_before_date](#where_before_date)"
 ---
 
-### asset_url
+## asset_url
+Returns the url of an asset inside the `assets` folder of your theme.
 
-### empty?
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ "css/style.css" | asset_url }}{% endraw %}
+```
 
-### global_asset_url
+<p class='no-margin'>Output:</p>
+```text
+/theme/assets/css/style.css
+```
 
-### img_tag
+___
 
-### not_empty?
+## empty?
+Returns `true` if content is 'empty'.
 
-### parameterize
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{{ "" | empty? }}
+{{ [] | empty? }}
+{{ "nope" | empty? }}
+{% endraw %}
+```
 
-### script_tag
+<p class='no-margin'>Output:</p>
+```text
+true
+true
+false
+```
 
-### stylesheet_tag
+___
 
-### where
+## global_asset_url
+Returns the url of a 'global asset'. Global assets are commonly used assets. By using these url's as input for a `script_tag` or `stylesheet_tag` you don't have to upload them yourself. Usually the url's are of the recommended CDN's.
 
-### where_before_date
+The filter accepts two possible arguments: asset type (css/js) and version (default value depending on asset).
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{{ "bootstrap" | global_asset_url | stylesheet_tag }}
+{{ "bootstrap" | global_asset_url: "js", "4.0.0-beta" | script_tag }}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+```
+
+The following global assets are available:
+
+```ruby
+"bootstrap" # Default version: 3.3.7. Available types: css, js.
+```
+```ruby
+"font_awesome" # Default version: 4.7.0. Available types: css.
+```
+```ruby
+"jquery" # Default version: 3.2.1. Available types: js.
+```
+```ruby
+"lightbox" # Default version: 2.9.0. Available types: css, js.
+```
+```ruby
+"animate" # Default version: 3.5.2. Available types: css.
+```
+```ruby
+"cycle2" # Default version: n/a. Available types: js.
+```
+
+___
+
+## img_tag
+
+Returns an HTML image tag. You can pass a string or a series of `key:value` arguments to set HTML attributes.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{{ "path-to-image.jpg" | img_tag }}
+{{ "path-to-image.jpg" | img_tag: "Image Name" }}
+{{ "path-to-image.jpg" | img_tag: class: "image-class", alt: "image-alt" }}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<img src="path-to-image.jpg">
+<img src="path-to-image.jpg" title="Image Name" alt="Image Name">
+<img src="path-to-image.jpg" class="image-class" alt="image-alt">
+```
+
+The filter accepts an image url, but also an array of url's. In that case the filter will use the srcset responsive image option. Together with Plate's `responsive_img_urls` attribute for the `attachment` object ([read more](/docs/templating-reference/objects#attachments)) this is a good way to easily create responsive images.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ attachment.responsive_img_urls | img_tag }}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<img src="path1.jpg" srcset="path1.jpg 162w, path2.jpg 218w, path3.jpg 270w, path4.jpg 330w" sizes="(min-width:1200px) 270px, (min-width:992px) 218px, (min-width:768px) 162px, 330px">
+```
+
+___
+
+## not_empty?
+
+Opposite of `empty?` filter.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{{ "" | not_empty? }}
+{{ [] | not_empty? }}
+{{ "nope" | not_empty? }}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```text
+false
+false
+true
+```
+
+___
+
+## parameterize
+
+Converts a string to a parameter.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ "Hi there. How are we doing today?" | parameterize }}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```text
+"hi_there_how_are_we_doing_today"
+```
+
+___
+
+## script_tag
+
+Returns a HTML script-tag
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ "path-to-asset.js" | script_tag }}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<script src="path-to-asset.js" charset="utf-8"></script>
+```
+
+___
+
+## stylesheet_tag
+
+Returns a HTML stylesheet link-tag
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ "path-to-asset.css" | stylesheet_tag }}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<link rel="stylesheet" href="path-to-asset.css"></link>
+```
+
+___
+
+## where
+
+Select all the objects in an array where the attribute (first argument) returns a certain value (second argument).
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ site.posts | where: "title", "Only this title" }}{% endraw %}
+```
+
+Returns sub-array of posts.
