@@ -7,6 +7,7 @@ id: "content-types"
 sub_menu:
   - "[About Content Types](#about-content-types)"
   - "[Creating Content Types](#creating-content-types)"
+  - "[Default Content Types](#default-content-types)"
 order: 3
 ---
 
@@ -61,3 +62,5 @@ Now the end user can create actual Colored Button elements. How these buttons lo
 Fill out the necessary fields (see [About Content Types](#about-content-types) to learn more about the functions of this data).
 
 <img src="/assets/img/content-types-2.png" width="800">
+
+## Default Content Types

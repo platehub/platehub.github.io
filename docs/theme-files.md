@@ -7,6 +7,7 @@ id: "theme-files"
 sub_menu:
   - "[Inline or 'Layoutable'](#inline-or-layoutable)"
   - "[Theme file paths](#theme-file-paths)"
+  - "[Variables](#variables)"
   - "[Theme Layouts](#theme-layouts)"
   - "[Trays](#trays)"
   - "[Theme Templates](#theme-templates)"
@@ -64,15 +65,33 @@ Partials are snippets of code that can be included in other theme files, with th
 `paragraphs/_some_partial.plate`  
 `theme/_some_partial.plate`  
 
+## Variables
+Aside from the variables you can set yourself (with the [assign tag](https://shopify.github.io/liquid/tags/variable/) for example), there are some default variables present in the theme files.
+
+`site`  
+The [site object](/docs/templating-reference/objects#site) for the current site.
+
+`post`  
+The current post ([layoutable content](#what-is-layoutable-content)). Also available by calling the singular name of the [content type](/docs/content-types). E.g. `page` or `category`.
+
+`request`  
+The [request object](/docs/templating-reference/objects#request).
+
+Every time the [content_for](/docs/templating-reference/tags#content_for) tag is called for a Plate object, the name becomes a variable. If the object's content type is that of an element, the content type singular id is also available as a variable. E.g. `element` and `contact_form`.
+
 ## Theme Layouts
-Every [layoutable content](#what-is-layoutable-content) theme file inherits from the Theme Layout. This is a theme file where you put the `<head>` HTML tags, and all other stuff that needs to be shown on every web page of your site. The default Theme layout is `theme` (theme file: `theme.plate`) and cannot be changed at this time. You invoke the rest of the Plate content (scaffolding the [Plate layout structure](/docs/getting-started#the-plate-nested-layout-structure)) by calling the `content_for_layout` variable.
+Every [layoutable content](#what-is-layoutable-content) theme file inherits from the theme Layout. This is a theme file where you put the `<head>` HTML tags, and all other stuff that needs to be shown on every web page of your site. The default theme layout is `theme` (theme file: `theme.plate`). You invoke the rest of the Plate content (scaffolding the [Plate layout structure](/docs/getting-started#the-plate-nested-layout-structure)) by calling the `{% raw %}{{ content_for_layout }}{% endraw %}` variable.
 
 The layout theme files must always be placed in the `layouts` folder in the root of your theme. E.g. `layouts/theme.plate`.
+
+You are **required** to include the following tag in the theme layout file's `<head>`:  
+`{% raw %}{% include "content_for_head" %}{% endraw %}`  
+This adds all Plate dependencies, like all assets used when the site is in edit mode.
 
 **Heads up!** The Theme Layout is something else entirely than the [Plate Nested Layout structure](/docs/getting-started#the-plate-nested-layout-structure)!
 
 ## Trays
-Trays are the same as sections, and have the same nested layout components (Rows, and so on). The main difference from sections is that trays do not fall inside the Nested Layout Structure. Trays only belong to the site. This way you can add a nested Layout structure from the section level down on any place you want, not just inside a Post context. This is useful for footers and headers for example. You want to have the nested layout structure here, but it doesn't necessarily fall under a post.
+Trays are the same as sections, and have the same nested layout components (Rows, and so on). The main difference from sections is that trays do not fall inside the Nested Layout Structure. Trays only belong to the site. This way you can add a nested Layout structure from the section level down on any place you want, not just inside a Post context. This is useful for footers and headers for example. You want to have the nested layout structure here, but it doesn't necessarily fall under a post. You can render a tray by using the [tray tag](/docs/templating-reference/tags#tray).
 
 #### Tray theme files
 To use a tray, you need to create a (inline, so a [partial](#partials)) theme file for it inside the `trays` folder. The name of the theme file is the name of the tray. For example, creating the file `trays/_footer.plate` opens up the 'Footer' tray inside the [content types](/docs/content-types) dashboard, so you can add [content fields](/docs/content-fields) to it.

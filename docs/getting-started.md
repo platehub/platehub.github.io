@@ -6,6 +6,7 @@ menu_item: true
 id: "getting-started"
 sub_menu:
   - "[Nested Layout Structure](#the-plate-nested-layout-structure)"
+  - "[Grid system](#the-plate-grid-system)"
   - "[Plate themes](#plate-themes)"
 order: 2
 ---
@@ -21,6 +22,8 @@ The layout of a post in Plate is built out of the following nested layout compon
 The dragging/dropping of content elements, and resizing plus changing the order of sections, rows and columns gives the user ultimate freedom to set up the posts layout as he sees fit.
 
 ![Plate content scheme](/assets/img/getting-started--content-schema.png)
+
+## The Plate Grid system
 
 ## Plate themes
 
