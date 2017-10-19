@@ -11,6 +11,7 @@ sub_menu:
   - "[Theme Layouts](#theme-layouts)"
   - "[Trays](#trays)"
   - "[Theme Templates](#theme-templates)"
+  - "[Default Theme Files](/docs/default-theme-files)"
 order: 5
 ---
 

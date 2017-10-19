@@ -18,9 +18,10 @@ After you create a [content type](/docs/content-types) you need to add fields to
 ## Name and ID
 
 Content fields have a `name` and an `id`. The name is used as the label above the field in the edit screens. The id is the key that is used as an attribute to call on the object variable in the theme files. In the example of the 'Colored Button' [content type](/docs/content-types), you could add a field for the background color of the button.
+
 <img src="/assets/img/content-fields-name-id-1.png">
 
-In the user's edit screen for a colored button it would say 'Background color of the button' above the field. In the theme file (`colored_buttons/_colored_button.plate`) you would use `colored_button.bg_color` to call the contents of the field. In this case, `colored_button` being the object with the 'Colored button' [content type](/docs/content-types), and `bg_color` being the field id and attribute name for colored_button.
+In the user's edit screen for a colored button it would say 'Background color of the button' above the field. In the [theme file](/docs/theme-files) (`colored_buttons/_colored_button.plate`) you would use `colored_button.bg_color` to call the contents of the field on the [object](/docs/templating-reference/objects). In this case, `colored_button` being the object with the 'Colored button' [content type](/docs/content-types), and `bg_color` being the field id and attribute name for the colored_button object. Read the documentation on [objects](/docs/templating-reference/objects) for more on how to call the attributes inside the theme files.
 
 ## Content Field kinds
 
@@ -33,7 +34,7 @@ A single line text field, that can be used for titles etc.
 A multiline text field, suitable for longer texts. This field can be turned into a code field with syntax highlighting, so the user can type in code. This field is also best used when using the `edit_text_inline` templating tag.
 
 #### Media field
-A field that gives the user access to the media library, where he can pick or upload new images, PDF's and other attachments.
+A field that gives the user access to the media library, where he can pick or upload new images, PDF's and other attachments. Calling a media field object attribute returns an [attachment object](/docs/templating-reference/objects#attachment).
 
 #### Choice field
 This field gives the user one or more choices to choose from. You can add possible choices (predefined values), or pick a true/false choice option. The possible choice field kinds are:

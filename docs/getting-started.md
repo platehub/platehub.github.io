@@ -25,6 +25,39 @@ The dragging/dropping of content elements, and resizing plus changing the order 
 
 ## The Plate Grid system
 
+When you add the `{% raw %}{% include "content_for_head" %}{% endraw %}` Plate also loads a grid system that is utilized by the nested layout structure to build the layout. You can use this grid system in your own theme. The grid works much like [Bootstrap's grid](https://getbootstrap.com/docs/3.3/css/#grid).
+
+<p class="no-margin">Example:</p>
+```html
+<div class="plate--container">
+  <div class="plate--row">
+    <div class="plate--column sm-4">
+      ...
+    </div>
+    <div class="plate--column sm-4">
+      ...
+    </div>
+    <div class="plate--column sm-4">
+      ...
+    </div>
+  </div>
+</div>
+```
+
+The default responsive grid sizes are:
+- `xs` (max 767px)
+- `sm` (max 991px)
+- `md` (max 1200px)
+- `lg` (> 1200px)
+
+The `plate--container` div has the same max width as the current grid size. `plate--container-fluid` always has 100% width.
+
+The maximum amount of column units inside `plate--row` is 12.
+
+`plate--column` has a gutter width of 30px (15px on each side). Columns are initially horizontally aligned, but break to vertically if the screen size is smaller than the named grid-size. E.g. `sm-4` breaks off to vertical aligning if the screen size is smaller than 992px (`sm` is max 991px).
+
+Of course you are not required to use Plate's grid system. If you like another grid system better, you are free to use that one.
+
 ## Plate themes
 
 Every Plate site uses a theme. Themes are made out of plain HTML/CSS/JS, and a templating layer: [Liquid](https://shopify.github.io/liquid/), extended with Plate specific functionality.
@@ -43,3 +76,17 @@ A couple of tips to create a preview site:
 - Use stock images as a placeholder for images
 - Make sure to not include any references to existing companies or organizations in content fields, titles, etc.
 - If you are creating a theme for a specific client, still follow these tips. You never know if you can use this theme again in the future, and it's hard to remove all references to your client afterwards.
+
+## Creating a site
+As a partner you can create sites for your client. To do this follow these steps:
+
+- In the partner dashboard, go to 'All sites'
+- Click on the floating add button.
+
+<img src="/assets/img/getting-started--creating-a-site-1.png" width="600">
+
+- Fill out the neccessary fields: site name, domain and a theme.
+- Fill out name and contact email of your client's organization, or pick it from the dropdown if it already exists.
+
+
+<img src="/assets/img/getting-started--creating-a-site-2.png" width="600">

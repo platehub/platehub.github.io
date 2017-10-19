@@ -64,3 +64,37 @@ Fill out the necessary fields (see [About Content Types](#about-content-types) t
 <img src="/assets/img/content-types-2.png" width="800">
 
 ## Default Content Types
+
+Every Plate site must have a bare minimum of content types, so there are a couple of defaults that you cannot edit or delete. You can extend them with extra custom [content fields](/docs/content-fields). The following is a list of default content types and their default content fields.
+
+#### Paragraph
+Inline editable text. Default content fields:
+- Body
+
+#### image
+A single image. Default content fields:
+- Image
+- Link
+
+#### Contact form
+Contact form.  Default content fields:
+- Target email
+- Field lines (reference to default content type 'Form field')
+
+#### Image gallery
+Multiple images.  Default content fields:
+- Gallery items (reference to default content type 'Gallery image')
+
+#### HTML code
+Inline HTML code.  Default content fields:
+- Body
+
+#### Menu
+Inline menu.  Default content fields:
+- Menu items (reference to default content type 'Menu item')
+
+#### Post
+Post type for blog posts. (post type with the name posts. Confusing, we know.) No default content fields.
+
+#### Page
+Post type for regular pages. No default content fields.

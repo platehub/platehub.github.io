@@ -18,7 +18,7 @@ sub_menu_sub:
   - "[script_tag](#script_tag)"
   - "[stylesheet_tag](#stylesheet_tag)"
   - "[where](#where)"
-  - "[where_before_date](#where_before_date)"
+#  - "[where_before_date](#where_before_date)"
 ---
 
 ## asset_url
@@ -119,7 +119,7 @@ Returns an HTML image tag. You can pass a string or a series of `key:value` argu
 <img src="path-to-image.jpg" class="image-class" alt="image-alt">
 ```
 
-The filter accepts an image url, but also an array of url's. In that case the filter will use the srcset responsive image option. Together with Plate's `responsive_img_urls` attribute for the `attachment` object ([read more](/docs/templating-reference/objects#attachments)) this is a good way to easily create responsive images.
+The filter accepts an image url, but also an array of url's. In that case the filter will use the srcset responsive image option. Together with Plate's `responsive_img_urls` attribute for the `attachment` object ([read more](/docs/templating-reference/objects#attachmentresponsive_img_urls)) this is a good way to easily create responsive images.
 
 <p class='no-margin'>Input:</p>
 ```liquid
