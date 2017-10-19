@@ -18,7 +18,15 @@ body {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #000;
+  background: #ea5d0b;
+}
+
+#sidebar-wrapper a{
+  color:#fff;
+}
+
+#sidebar-wrapper li ul a{
+  color:#ffdecb;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -84,9 +92,12 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand {
-  height: 65px;
   font-size: 18px;
   line-height: 60px;
+  border-bottom: 1px solid #ff8e4c;
+  margin-bottom: 10px;
+  height: 58px;
+  font-size:1.2em;
 }
 
 .sidebar-nav > .sidebar-brand a {

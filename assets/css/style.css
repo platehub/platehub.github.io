@@ -1,6 +1,7 @@
 body{
   font-size:16px;
   line-height:1.7;
+  font-family: 'Roboto', sans-serif;
 }
 
 p{
@@ -41,4 +42,27 @@ hr{
   div.highlight{
     width:125%;
   }
+}
+
+.sidebar-logo{
+  width:50px;
+  margin-left:14px;
+}
+
+#sidebar-wrapper .bottom-part{
+  position:absolute;
+  bottom:14px;
+  width:250px;
+}
+
+#sidebar-wrapper .bottom-part span{
+  float: right;
+  width: 71%;
+  color: #fff;
+  line-height: 1.5;
+  font-size:0.9em;
+}
+
+#sidebar-wrapper .bottom-part span a{
+  text-decoration: underline;
 }

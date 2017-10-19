@@ -22,9 +22,15 @@
   <div id="wrapper" class="">
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li class="sidebar-brand"><a href="/docs">Plate Documentation</a></li>
+        <li class="sidebar-brand">
+          <a href="/docs">Plate Documentation</a>
+        </li>
         {%- include sidebar_submenu.html page=page -%}
       </ul>
+      <div class="bottom-part">
+        <img src="/assets/img/logo.png" class="sidebar-logo">
+        <span>Got questions or suggestions? <a href="mailto:info@startmetplate.nl">Mail us!</a></span>
+      </div>
     </div>
 
     <div id="page-content-wrapper">
@@ -38,5 +44,6 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="/assets/js/functions.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </body>
 </html>

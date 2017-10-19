@@ -8,6 +8,7 @@ sub_menu:
   - "[Nested Layout Structure](#the-plate-nested-layout-structure)"
   - "[Grid system](#the-plate-grid-system)"
   - "[Plate themes](#plate-themes)"
+  - "[Creating a Site](#creating-a-site)"
 order: 2
 ---
 
