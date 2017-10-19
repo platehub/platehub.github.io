@@ -29,6 +29,11 @@ body {
   color:#ffdecb;
 }
 
+#sidebar-wrapper .sidebar-nav{
+  background: #ea5d0b;
+  z-index: 1;
+}
+
 #wrapper.toggled #sidebar-wrapper {
   width: 250px;
 }
