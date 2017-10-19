@@ -7,7 +7,7 @@ id: "introduction"
 order: 1
 ---
 
-Welcome to the Plate Documentation site. Navigate using the sidebar or top menu.
+Welcome to the Plate Documentation site. Navigate using the sidebar menu.
 
 ## Before you begin...
 This documentation site is meant for developers building sites on the Plate platform. Throughout the documentation you will be referred to as 'site builder' or 'developer'.

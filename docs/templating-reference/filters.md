@@ -72,7 +72,7 @@ The filter accepts two possible arguments: asset type (css/js) and version (defa
 
 <p class='no-margin'>Output:</p>
 ```html
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 ```
 
