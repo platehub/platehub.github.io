@@ -10,7 +10,7 @@ sub_menu:
   - "[References](#references)"
   - "[Validation rules](#validation-rules)"
   - "[Creating Content Fields](#creating-content-fields)"
-order: 4
+order: 5
 ---
 
 After you create a [content type](/docs/content-types) you need to add fields to it, so the user can add his content to the object.

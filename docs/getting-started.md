@@ -10,7 +10,7 @@ sub_menu:
   - "[Plate themes](#plate-themes)"
   - "[Creating a Site](#creating-a-site)"
   - "[Uploading your theme](#uploading-your-theme)"
-order: 2
+order: 3
 ---
 
 Plate is a frontend-based Content Management System (CMS) that offers clean simplicity in terms of content editing; the user does not have to manage his content in a backend, but edits it inline. That is what makes Plate truly WYSIWYG.

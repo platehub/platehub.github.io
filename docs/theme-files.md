@@ -12,7 +12,7 @@ sub_menu:
   - "[Trays](#trays)"
   - "[Theme Templates](#theme-templates)"
   - "[Default Theme Files](/docs/default-theme-files)"
-order: 5
+order: 6
 ---
 
 Plate themes consist of theme files, which are only HTML files with a [templating engine](/docs/templating-reference) on top of it (extension `.plate`), and assets (CSS, JS, images, fonts, etc).

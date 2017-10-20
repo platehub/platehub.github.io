@@ -9,7 +9,7 @@ sub_menu:
   - "[Tags](/docs/templating-reference/tags)"
   - "[Filters](/docs/templating-reference/filters)"
   - "[Objects](/docs/templating-reference/objects)"
-order: 6
+order: 7
 ---
 
 ## Liquid

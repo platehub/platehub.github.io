@@ -4,7 +4,7 @@ title: Plate Theme tool
 page_url: /docs/theme-tool
 menu_item: true
 id: "theme-tool"
-order: 7
+order: 8
 ---
 ### How does it work?
 The Plate Theme Tool starts up a listener for your theme's folder, and tracks changes. When a file is changed (added, edited, deleted), the theme tool uploads the change immediately to Plate's servers. This way you don't have to worry about FTP'ing your files after each change, but you can edit your theme or site's theme files on the fly.
