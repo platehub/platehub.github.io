@@ -9,6 +9,7 @@ sub_menu:
   - "[Grid system](#the-plate-grid-system)"
   - "[Plate themes](#plate-themes)"
   - "[Creating a Site](#creating-a-site)"
+  - "[Uploading your theme](#uploading-your-theme)"
 order: 2
 ---
 
@@ -61,7 +62,7 @@ Of course you are not required to use Plate's grid system. If you like another g
 
 ## Plate themes
 
-Every Plate site uses a theme. Themes are made out of plain HTML/CSS/JS, and a templating layer: [Liquid](https://shopify.github.io/liquid/), extended with Plate specific functionality.
+Every Plate site uses a theme. Themes are made out of plain HTML/CSS/JS, and a templating layer: [Liquid](https://shopify.github.io/liquid/), extended with [Plate specific functionality](/docs/templating-reference/).
 
 ### How to create a theme
 
@@ -82,12 +83,21 @@ A couple of tips to create a preview site:
 As a partner you can create sites for your client. To do this follow these steps:
 
 - In the partner dashboard, go to 'All sites'
-- Click on the floating add button.
+- Click on the floating Add button.
 
 <img src="/assets/img/getting-started--creating-a-site-1.png" width="600">
 
 - Fill out the neccessary fields: site name, domain and a theme.
 - Fill out name and contact email of your client's organization, or pick it from the dropdown if it already exists.
 
-
 <img src="/assets/img/getting-started--creating-a-site-2.png" width="600">
+
+
+### A site's theme
+The chosen theme gets copied to the site, so you or the site's end user can change it without changing the source theme. To download a site's theme, go to the Site dashboard, and click on 'Site settings'. you can download the site's theme by clicking on the 'Theme' tab.
+
+
+## Uploading your theme
+After [creating and downloading your theme](#how-to-create-a-theme) (you can also [download a specific site's theme](#a-sites-theme)) you want to add changes to it and upload these changes. Plate's dev team created a deployment tool to make sure this process goes with as much ease as possible. You only have to turn on the listener, and go edit your theme files. The theme tool does the rest.
+
+Read more about the [Plate Theme Tool](/docs/theme-tool).
