@@ -6,11 +6,11 @@ menu_item: true
 id: "theme-files"
 sub_menu:
   - "[Inline or 'Layoutable'](#inline-or-layoutable)"
-  - "[Theme file paths](#theme-file-paths)"
   - "[Variables](#variables)"
   - "[Theme Layouts](#theme-layouts)"
   - "[Trays](#trays)"
   - "[Theme Templates](#theme-templates)"
+  - "[Theme file paths](#theme-file-paths)"
   - "[Default Theme Files](/docs/default-theme-files)"
 order: 6
 ---
@@ -34,37 +34,6 @@ Layoutable content have their own url, like pages, categories and news articles.
 
 #### Theme files for layoutable content (Posts)
 Layoutable content theme files are not partials, so they do not have a leading underscore. There must be two theme files in the designated folder: `show.plate` and `index.plate`, one for each [post type template](/docs/content-types#layoutable-posts-post-types).
-
-
-## Theme file paths
-Theme file paths for [Plate layout components](/docs/getting-started#the-plate-nested-layout-structure) are structured as follows: `:plural_name/:theme_file_name.:ext`. In the case of Inline Layout components, `:theme_file_name` is the singular name of the layout component or content type.
-
-E.g.  
-`sections/_section.plate`  
-`posts/show.plate`
-
-#### Content Types
-Theme files for content types are structured the same way, but in this case the plural and singular names are set by you, when [creating content types](/docs/content-types#creating-content-types).
-
-E.g.  
-`pages/show.plate`  
-`categories/show.plate`  
-`colored_buttons/_colored_button.plate`  
-`paragraphs/_paragraph.plate`
-
-#### Assets
-Assets (CSS, JS) must always be placed in the `assets` folder in the root of your theme. After that you can nest folders as deep as you want. These paths are all valid:
-
-`assets/style.css`  
-`assets/css/style.css`  
-`assets/js/libs/my_js_lib.js`
-
-#### Partials
-Partials are snippets of code that can be included in other theme files, with the `include` tag. Partials are useful to keep your code clean and prevent unnecessary code repetition. Unlike some other theme files, you are not limited to where to put partials, except the `assets` folder. So the following paths are all valid:
-
-`/_some_partial.plate`  
-`paragraphs/_some_partial.plate`  
-`theme/_some_partial.plate`  
 
 ## Variables
 Aside from the variables you can set yourself (with the [assign tag](https://shopify.github.io/liquid/tags/variable/) for example), there are some default variables present in the theme files.
@@ -109,3 +78,33 @@ The names separated by the dot, in these cases 'slider' and 'background_image' a
 As you can see there is also a 'Default section' template. This template corresponds to the `_sections/_section.plate` file name, so without a dot-separated template name. It's always a good idea to keep the 'default' template around. So in the case of the screenshot, there are two section theme files: `sections/_section.plate` and `sections/_section.cta.plate`.
 
 **Heads up!** Theme templates only work for sections, for now.
+
+## Theme file paths
+Theme file paths for [Plate layout components](/docs/getting-started#the-plate-nested-layout-structure) are structured as follows: `:plural_name/:theme_file_name.:ext`. In the case of Inline Layout components, `:theme_file_name` is the singular name of the layout component or content type.
+
+E.g.  
+`sections/_section.plate`  
+`posts/show.plate`
+
+#### Content Types
+Theme files for content types are structured the same way, but in this case the plural and singular names are set by you, when [creating content types](/docs/content-types#creating-content-types).
+
+E.g.  
+`pages/show.plate`  
+`categories/show.plate`  
+`colored_buttons/_colored_button.plate`  
+`paragraphs/_paragraph.plate`
+
+#### Assets
+Assets (CSS, JS) must always be placed in the `assets` folder in the root of your theme. After that you can nest folders as deep as you want. These paths are all valid:
+
+`assets/style.css`  
+`assets/css/style.css`  
+`assets/js/libs/my_js_lib.js`
+
+#### Partials
+Partials are snippets of code that can be included in other theme files, with the `include` tag. Partials are useful to keep your code clean and prevent unnecessary code repetition. Unlike some other theme files, you are not limited to where to put partials, except the `assets` folder. So the following paths are all valid:
+
+`/_some_partial.plate`  
+`paragraphs/_some_partial.plate`  
+`theme/_some_partial.plate`  
