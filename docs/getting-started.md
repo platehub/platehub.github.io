@@ -98,6 +98,6 @@ The chosen theme gets copied to the site, so you or the site's end user can chan
 
 
 ## Uploading your theme
-After [creating and downloading your theme](#how-to-create-a-theme) (you can also [download a specific site's theme](#a-sites-theme)) you want to add changes to it and upload these changes. Plate's dev team created a deployment tool to make sure this process goes with as much ease as possible. You only have to turn on the listener, and go edit your theme files. The theme tool does the rest.
+After [creating and downloading your theme](#how-to-create-a-theme) (you can also [download a specific site's theme](#a-sites-theme)) you want to add changes to it and upload these changes. Plate's dev team created a deployment tool to ensure this process goes with as much ease as possible. You only have to turn on the listener, and go edit your theme files. The theme tool does the rest.
 
 Read more about the [Plate Theme Tool](/docs/theme-tool).
