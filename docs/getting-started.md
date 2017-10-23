@@ -5,17 +5,37 @@ page_url: /docs/getting-started
 menu_item: true
 id: "getting-started"
 sub_menu:
-  - "[Nested Layout Structure](#the-plate-nested-layout-structure)"
-  - "[Grid system](#the-plate-grid-system)"
-  - "[Plate themes](#plate-themes)"
-  - "[Creating a Site](#creating-a-site)"
+  - "[Plate Themes](#plate-theme)"
+  - "[Theme Structure](#theme-structure)"
   - "[Uploading your theme](#uploading-your-theme)"
+  - "[Creating a Site](#creating-a-site)"
 order: 3
 ---
 
 Plate is a frontend-based Content Management System (CMS) that offers clean simplicity in terms of content editing; the user does not have to manage his content in a backend, but edits it inline. That is what makes Plate truly WYSIWYG.
 
-## The Plate Nested Layout Structure
+## Plate themes
+
+Every Plate site uses a theme. Themes are made out of plain HTML/CSS/JS, and a templating layer: [Liquid](https://shopify.github.io/liquid/), extended with [Plate specific functionality](/docs/templating-reference/).
+
+### How to create a theme
+
+You can create an empty theme by going to your [partner dashboard](https://www.startwithplate.com/dashboard), and clicking on 'Themes' in the sidebar menu. Next click on 'Create New Theme'. To download the theme files after creating it, click on 'Download Theme'. To continue working with your theme, check out [Themes & Theme files](/docs/theme-files).
+
+<img src="/assets/img/getting-started--themes-1.png" width="600"><img src="/assets/img/getting-started--themes-2.png" width="600">
+
+### What happens with your theme when it is picked?
+When a user picks your theme, a site gets created with not only the theme files, but also the preview content and content types of your preview site. So make sure you keep your preview site just a preview site.
+
+A couple of tips to create a preview site:
+- Use [Lorem Ipsum](https://lipsum.com/) as a placeholder for text content
+- Use stock images as a placeholder for images
+- Make sure to not include any references to existing companies or organizations in content fields, titles, etc.
+- If you are creating a theme for a specific client, still follow these tips. You never know if you can use this theme again in the future, and it's hard to remove all references to your client afterwards.
+
+## Theme Structure
+
+### The Plate Nested Layout Structure
 
 The layout of a post in Plate is built out of the following nested layout components.
 
@@ -25,7 +45,17 @@ The dragging/dropping of content elements, and resizing plus changing the order 
 
 ![Plate content scheme](/assets/img/getting-started--content-schema.png)
 
-## The Plate Grid system
+### Required files
+
+Plate will load a site starting with a [theme layout file](/docs/theme-files), `layouts/theme.plate` by default. This is the file that is the basis for every page, so a header, footer or html head tag that appears on every page should be placed here. At the location where `{% raw %}{{ content_for_layout }}{% endraw %}`, is called, the page specific content will be loaded.
+
+The page specific content is retrieved by calling the corresponding content for the requested post. This post content is templated separately for each [post type](/docs/content-types#about-content-types) like Pages and Blogposts. For each post type, an `index.plate` and a `show.plate` file is required. The `index.plate` template is used for the overview page of all the instances the post type, and the `show.plate` template is used for the detail page of a single instance of the post type. [Learn more about theme files](/docs/theme-files)
+
+## Writing theme files
+
+Theme files are written in the plate templating language. This language is HTML combined with a simple [templating language](/docs/templating-reference). Any CSS or Javascript assets or frameworks can be used and included. By default, the Plate Grid framework is included.
+
+### The Plate Grid system
 
 When you add the `{% raw %}{% include "content_for_head" %}{% endraw %}` Plate also loads a grid system that is utilized by the nested layout structure to build the layout. You can use this grid system in your own theme. The grid works much like [Bootstrap's grid](https://getbootstrap.com/docs/3.3/css/#grid).
 
@@ -60,24 +90,10 @@ The maximum amount of column units inside `plate--row` is 12.
 
 Of course you are not required to use Plate's grid system. If you like another grid system better, you are free to use that one.
 
-## Plate themes
+## Uploading your theme
+After [creating and downloading your theme](#how-to-create-a-theme) (you can also [download a specific site's theme](#a-sites-theme)) you want to add changes to it and upload these changes. Plate's dev team created a deployment tool to ensure this process goes with as much ease as possible. You only have to turn on the listener, and go edit your theme files. The theme tool does the rest.
 
-Every Plate site uses a theme. Themes are made out of plain HTML/CSS/JS, and a templating layer: [Liquid](https://shopify.github.io/liquid/), extended with [Plate specific functionality](/docs/templating-reference/).
-
-### How to create a theme
-
-You can create an empty theme by going to your [partner dashboard](https://www.startwithplate.com/dashboard), and clicking on 'Themes' in the sidebar menu. Next click on 'Create New Theme'. To download the theme files after creating it, click on 'Download Theme'. To continue working with your theme, check out [Themes & Theme files](/docs/theme-files).
-
-<img src="/assets/img/getting-started--themes-1.png" width="600"><img src="/assets/img/getting-started--themes-2.png" width="600">
-
-### What happens with your theme when it is picked?
-When a user picks your theme, a site gets created with not only the theme files, but also the preview content and content types of your preview site. So make sure you keep your preview site just a preview site.
-
-A couple of tips to create a preview site:
-- Use [Lorem Ipsum](https://lipsum.com/) as a placeholder for text content
-- Use stock images as a placeholder for images
-- Make sure to not include any references to existing companies or organizations in content fields, titles, etc.
-- If you are creating a theme for a specific client, still follow these tips. You never know if you can use this theme again in the future, and it's hard to remove all references to your client afterwards.
+Read more about the [Plate Theme Tool](/docs/theme-tool).
 
 ## Creating a site
 As a partner you can create sites for your client. To do this follow these steps:
@@ -95,9 +111,3 @@ As a partner you can create sites for your client. To do this follow these steps
 
 ### A site's theme
 The chosen theme gets copied to the site, so you or the site's end user can change it without changing the source theme. To download a site's theme, go to the Site dashboard, and click on 'Site settings'. you can download the site's theme by clicking on the 'Theme' tab.
-
-
-## Uploading your theme
-After [creating and downloading your theme](#how-to-create-a-theme) (you can also [download a specific site's theme](#a-sites-theme)) you want to add changes to it and upload these changes. Plate's dev team created a deployment tool to ensure this process goes with as much ease as possible. You only have to turn on the listener, and go edit your theme files. The theme tool does the rest.
-
-Read more about the [Plate Theme Tool](/docs/theme-tool).
