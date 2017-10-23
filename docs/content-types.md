@@ -11,7 +11,7 @@ sub_menu:
 order: 4
 ---
 
-Every editable content object in Plate is basically an abstract object with no atttributes or fields. You will grant the abstract object editable content by defining a content type for it and adding editable [content fields](/docs/content-fields). Plate also adds some default content fields, depending on the content type.
+Every object in Plate consists of a content type with 0 or more attributes, named content fields.  After defining the content type, 0 or more content fields can be defined for that content type. These [content fields](/docs/content-fields) will be editable for the user in the editing mode of Plate. Plate adds some default content fields, like `Title`, depending on the content type.
 
 ## About Content Types
 
