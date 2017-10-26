@@ -178,6 +178,18 @@ Returns query string. Everything after '?'.
 full=1
 ```
 
+#### request.url
+Returns the full current url.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ request.url }}{% endraw %}
+```
+<p class='no-margin'>Output:</p>
+```text
+https://www.my-plate-site.com/this/is-a/path?full=1
+```
+
 #### request.flash
 Contains browser flash messages like form errors.
 
@@ -229,6 +241,9 @@ The site object is accessible everywhere. The site object has the following defa
 
 #### site.name
 Returns the site name
+
+#### site.domain
+Returns the site's primary full domain. E.g. www.my-plate-site.com.
 
 #### site.:plural_post_type_name
 Returns all posts (objects with the specified [post type](/docs/content-types#layoutable-posts-post-types)). E.g. `{% raw %}{{ site.pages }}{% endraw %}` returns all posts with the content type 'page'. Adding `_index` returns the index post (the post with the index template). E.g. `{% raw %}{{ site.pages_index }}{% endraw %}`.
