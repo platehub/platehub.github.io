@@ -73,6 +73,30 @@ Returns array of elements that have the column object as parent.
 {% raw %}{{ column.elements }}{% endraw %}
 ```
 
+___
+
+## content_type
+The type object is accessible for Plate objects that have [content types](/docs/content-types), `element` and `post`.
+
+#### content_type.name
+Returns the name of the content type.
+
+```liquid
+{% raw %}{{ project.content_type.name }}{% endraw %}
+```
+```text
+project
+```
+
+#### content_type.title
+Returns the title of the content type.
+
+```liquid
+{% raw %}{{ social_media_button.content_type.title }}{% endraw %}
+```
+```text
+Social Media Button
+```
 
 ___
 
@@ -85,8 +109,8 @@ So,
 calling `{% raw %}{{ element }}{% endraw %}` in `elements/_element.plate` returns the element object, and  
 calling `{% raw %}{{ social_media_button }}{% endraw %}` in `social_media_buttons/_social_media_button.plate` returns the same element object.
 
-#### element.type
-Returns [Type](#type) object.
+#### element.content_type
+Returns [content_ype](#content_type) object.
 
 <!-- ___
 
@@ -140,8 +164,8 @@ Returns post SEO title.
 #### post.seo_description
 Returns post SEO description.
 
-#### post.type
-Returns [Type](#type) object.
+#### post.content_type
+Returns [content_ype](#content_type) object.
 
 ___
 
@@ -253,28 +277,3 @@ Returns the site's primary full domain. E.g. www.my-plate-site.com.
 
 #### site.:plural_post_type_name
 Returns all posts (objects with the specified [post type](/docs/content-types#layoutable-posts-post-types)). E.g. `{% raw %}{{ site.pages }}{% endraw %}` returns all posts with the content type 'page'. Adding `_index` returns the index post (the post with the index template). E.g. `{% raw %}{{ site.pages_index }}{% endraw %}`.
-
-___
-
-## type
-The type object is accessible for Plate objects that have [content types](/docs/content-types), `element` and `post`.
-
-#### type.name
-Returns the name of the content type.
-
-```liquid
-{% raw %}{{ project.type.name }}{% endraw %}
-```
-```text
-project
-```
-
-#### type.title
-Returns the title of the content type.
-
-```liquid
-{% raw %}{{ social_media_button.type.title }}{% endraw %}
-```
-```text
-Social Media Button
-```
