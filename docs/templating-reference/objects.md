@@ -262,5 +262,19 @@ The type object is accessible for Plate objects that have [content types](/docs/
 #### type.name
 Returns the name of the content type.
 
+```liquid
+{% raw %}{{ project.type.name }}{% endraw %}
+```
+```text
+project
+```
+
 #### type.title
 Returns the title of the content type.
+
+```liquid
+{% raw %}{{ social_media_button.type.title }}{% endraw %}
+```
+```text
+Social Media Button
+```
