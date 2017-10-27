@@ -256,7 +256,7 @@ Returns all posts (objects with the specified [post type](/docs/content-types#la
 
 ___
 
-## Type
+## type
 The type object is accessible for Plate objects that have [content types](/docs/content-types), `element` and `post`.
 
 #### type.name
