@@ -165,7 +165,7 @@ Returns post SEO title.
 Returns post SEO description.
 
 #### post.content_type
-Returns [content_ype](#content_type) object.
+Returns [content_type](#content_type) object.
 
 ___
 
