@@ -85,6 +85,9 @@ So,
 calling `{% raw %}{{ element }}{% endraw %}` in `elements/_element.plate` returns the element object, and  
 calling `{% raw %}{{ social_media_button }}{% endraw %}` in `social_media_buttons/_social_media_button.plate` returns the same element object.
 
+#### element.type
+Returns [Type](#type) object.
+
 <!-- ___
 
 ## form_message -->
@@ -132,10 +135,13 @@ The post url.
 ```
 
 #### post.seo_title
-Returns post SEO title
+Returns post SEO title.
 
 #### post.seo_description
-Returns post SEO description
+Returns post SEO description.
+
+#### post.type
+Returns [Type](#type) object.
 
 ___
 
@@ -247,3 +253,14 @@ Returns the site's primary full domain. E.g. www.my-plate-site.com.
 
 #### site.:plural_post_type_name
 Returns all posts (objects with the specified [post type](/docs/content-types#layoutable-posts-post-types)). E.g. `{% raw %}{{ site.pages }}{% endraw %}` returns all posts with the content type 'page'. Adding `_index` returns the index post (the post with the index template). E.g. `{% raw %}{{ site.pages_index }}{% endraw %}`.
+
+___
+
+## Type
+The type object is accessible for Plate objects that have [content types](/docs/content-types), `element` and `post`.
+
+#### type.name
+Returns the name of the content type.
+
+#### type.title
+Returns the title of the content type.
