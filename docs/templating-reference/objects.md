@@ -11,6 +11,7 @@ sub_menu:
 sub_menu_sub:
   - "[attachment](#attachment)"
   - "[column](#column)"
+  - "[content_type](#content_type)"
   - "[element](#element)"
 #  - "[form_message](#form_message)"
   - "[post](#post)"
