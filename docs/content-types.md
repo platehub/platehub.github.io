@@ -13,6 +13,9 @@ order: 4
 
 Every object in Plate consists of a content type with 0 or more attributes, named content fields.  After defining the content type, 0 or more content fields can be defined for that content type. These [content fields](/docs/content-fields) will be editable for the user in the editing mode of Plate. Plate adds some default content fields, like `Title`, depending on the content type.
 
+Content Types video tutorial (Dutch):
+<iframe src="https://player.vimeo.com/video/241698015?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ## About Content Types
 
 Plate recognizes two kinds of content types:

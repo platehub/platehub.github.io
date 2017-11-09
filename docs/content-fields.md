@@ -15,6 +15,10 @@ order: 5
 
 After you create a [content type](/docs/content-types) you need to add fields to it, so the user can add his content to the object.
 
+Content fields video tutorials (Dutch):
+<iframe src="https://player.vimeo.com/video/241871837?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/241874072?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ## Name and ID
 
 Content fields have a `name` and an `id`. The name is used as the label above the field in the edit screens. The id is the key that is used as an attribute to call on the object variable in the theme files. In the example of the 'Colored Button' [content type](/docs/content-types), you could add a field for the background color of the button.

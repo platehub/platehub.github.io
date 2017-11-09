@@ -14,6 +14,9 @@ order: 3
 
 Plate is a frontend-based Content Management System (CMS) that offers clean simplicity in terms of content editing; the user does not have to manage his content in a backend, but edits it inline. That is what makes Plate truly WYSIWYG.
 
+Getting started video tutorial (Dutch):
+<iframe src="https://player.vimeo.com/video/240990904?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ## Plate themes
 
 Every Plate site uses a theme. Themes are made out of plain HTML/CSS/JS, and a templating layer: [Liquid](https://shopify.github.io/liquid/), extended with [Plate specific functionality](/docs/templating-reference/).

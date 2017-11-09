@@ -17,6 +17,10 @@ order: 6
 
 Plate themes consist of theme files, which are only HTML files with a [templating engine](/docs/templating-reference) on top of it (extension `.plate`), and assets (CSS, JS, images, fonts, etc).
 
+Themes video tutorials (Dutch):
+<iframe src="https://player.vimeo.com/video/242049896?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/242057383?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ## Inline or 'Layoutable'
 
 #### What is inline content?
