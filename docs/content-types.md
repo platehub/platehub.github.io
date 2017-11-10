@@ -11,7 +11,7 @@ sub_menu:
 order: 4
 ---
 
-Every object in Plate consists of a content type with 0 (apart from some default) attributes. You can set attributes by adding [content fields](/docs/content-fields) to a content type. The user will then be able to set values in the created attributes in Plate's edit mode. 
+Every object in Plate consists of a content type with no attributes, apart from some defaults, like `title`. You can set attributes by adding [content fields](/docs/content-fields) to a content type. The user will then be able to set values in the created attributes in Plate's edit mode. 
 
 Content Types video tutorial (Dutch):
 <iframe src="https://player.vimeo.com/video/241700224?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
