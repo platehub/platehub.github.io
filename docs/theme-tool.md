@@ -11,7 +11,7 @@ The Plate Theme Tool starts up a listener for your theme's folder, and tracks ch
 
 ### Download
 <a href="https://bit.ly/plate-theme-tool-mac" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-apple"></i> Download for Mac</a>
-<a href="" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-windows"></i> Download for Windows</a>
+<a href="https://bit.ly/plate-theme-tool-win" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-windows"></i> Download for Windows</a>
 
 Or Linux users, [download the JAR file](https://bit.ly/plate-theme-tool-jar), which works on every OS with Java installed.
 
