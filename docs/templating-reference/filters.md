@@ -131,6 +131,8 @@ The filter accepts an image url, but also an array of url's. In that case the fi
 <img src="path1.jpg" srcset="path1.jpg 162w, path2.jpg 218w, path3.jpg 270w, path4.jpg 330w" sizes="(min-width:1200px) 270px, (min-width:992px) 218px, (min-width:768px) 162px, 330px">
 ```
 
+**Heads up!** For now, the `responsive_img_urls` filter only works correctly for the default `image` content type.
+
 ___
 
 ## not_empty?
