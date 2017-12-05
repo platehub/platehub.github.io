@@ -156,7 +156,7 @@ Input field for a form. Only works inside `contact_form` tag. The first argument
 <input type="text" name="form_message[content][test_field]" id="3864_test_field">
 ```
 
-You can add custom html attributes, by passing key: value arguments, after the third 'type' argument.
+You can add custom html attributes, by passing `key: value` arguments, after the third 'type' argument.
 
 <p class='no-margin'>Input:</p>
 ```liquid
@@ -198,7 +198,7 @@ Generates form input fields, but for the sender's data. This way Plate knows wha
 <input type="text" name="form_message[meta][sender][email]" id="1876_sender_field_email">
 ```
 
-Like the regular form_fields, you can add custom html attributes, by passing key: value arguments.
+Like the regular form_fields, you can add custom html attributes, by passing `key: value` arguments.
 
 <p class='no-margin'>Input:</p>
 ```liquid
