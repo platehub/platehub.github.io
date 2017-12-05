@@ -165,7 +165,7 @@ You can add custom html attributes, by passing key: value arguments, after the t
 
 <p class='no-margin'>Output:</p>
 ```html
-<input type="text" name="form_message[content][test_field]" id="3864_test_field" data-test-data: "data-test-value" placeholder="My Placeholder">
+<input type="text" name="form_message[content][test_field]" id="3864_test_field" data-test-data="data-test-value" placeholder="My Placeholder">
 ```
 
 ___
@@ -207,7 +207,7 @@ Like the regular form_fields, you can add custom html attributes, by passing key
 
 <p class='no-margin'>Output:</p>
 ```html
-<input type="text" name="form_message[content][test_field]" id="3864_test_field" data-test-data: "data-test-value" placeholder="My Placeholder">
+<input type="text" name="form_message[content][test_field]" id="3864_test_field" data-test-data="data-test-value" placeholder="My Placeholder">
 ```
 
 ___
