@@ -156,6 +156,18 @@ Input field for a form. Only works inside `contact_form` tag. The first argument
 <input type="text" name="form_message[content][test_field]" id="3864_test_field">
 ```
 
+You can add custom html attributes, by passing key: value arguments, after the third 'type' argument.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{% form_field field_line, "name", field_line.type, data_test_data: "data-test-value", placeholder: "My Placeholder" %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<input type="text" name="form_message[content][test_field]" id="3864_test_field" data-test-data: "data-test-value" placeholder="My Placeholder">
+```
+
 ___
 
 ## form_label
@@ -184,6 +196,18 @@ Generates form input fields, but for the sender's data. This way Plate knows wha
 <p class='no-margin'>Output:</p>
 ```html
 <input type="text" name="form_message[meta][sender][email]" id="1876_sender_field_email">
+```
+
+Like the regular form_fields, you can add custom html attributes, by passing key: value arguments.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{% form_sender_field "sender_field_email", data_test_data: "data-test-value", placeholder: "My Placeholder" %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<input type="text" name="form_message[content][test_field]" id="3864_test_field" data-test-data: "data-test-value" placeholder="My Placeholder">
 ```
 
 ___
