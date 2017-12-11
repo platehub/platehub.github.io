@@ -63,6 +63,22 @@ same as `error_msg`, but for the message when the form does send (request attrib
 </form>
 ```
 
+Every other attribute that you pass will be parsed as HTML attribute in the HTML form-tag.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{% contact_form class: "contact-form" %}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<form action="/form_messages" method="post" accept-charset="utf-8" class="contact-form">
+  <!-- Fields -->
+</form>
+```
+
 ___
 
 ## content_for
