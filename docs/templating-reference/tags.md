@@ -41,7 +41,7 @@ The attribute that is called on the fields to determine whether that field is re
 The error message that is used in the '[request](/docs/templating-reference/objects#request)' object (`alert` attribute) when the form is invalid and doesn't get sent. (Not requird, default: 'Something went wrong while sending the message.')
 
 `success_msg`  
-same as `error_msg`, but for the message when the form does send (request attribute: `notice`). (Not required, default: 'Thank you for your message. We will reply as soon as possible.')
+same as `error_msg`, but for the message when the form does send ([request](/docs/templating-reference/objects#request) attribute: `notice`). (Not required, default: 'Thank you for your message. We will reply as soon as possible.')
 
 <p class='no-margin'>Input:</p>
 ```liquid
