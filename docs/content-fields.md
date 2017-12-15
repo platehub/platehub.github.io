@@ -56,12 +56,15 @@ The user can choose a post from a dropdown to link to, an attachment from the me
 ## References
 In many cases you want to reference objects from another content type. For example, when you're creating a gallery, you want the user to be able to add one or more gallery items. However, these gallery items are standalone objects with a content type and fields themselves. To accomplish this you use the References field.
 
-When creating a References field, you pick a content type to reference. The user chooses from all of this content type's objects from a list in the edit screen. Since there needs to be a value to recognize the referenced objects in this list, you also need to select a text field that is used to represent the object in this list. If the referenced content type does not have a text field, you cannot choose it to reference it.
+When creating a References field, you pick a content type to reference. The user chooses from all of this content type's objects from a list in the edit screen. Since there needs to be a value to recognize the referenced objects in this list, you also need to select a text field that is used to represent the object in this list. This is done in the dropdown under 'Select the field that represents the title of the referenced object'. If the referenced content type does not have a text field, you cannot choose it to reference it.
 
 <img src="/assets/img/content-fields-references-1.png" width="800">
 
 If the referenced content type does not have a text field:
 <img src="/assets/img/content-fields-references-3.png">
+
+The values of the selected field turn up in the reference field's list of records, like this:
+<img src="/assets/img/content-fields-references-4.png">
 
 ### Reference context
 You alse need to pick a so-called 'Context' for the Reference field. You can choose from Global context and Local context.
