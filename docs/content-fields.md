@@ -61,10 +61,10 @@ When creating a References field, you pick a content type to reference. The user
 <img src="/assets/img/content-fields-references-1.png" width="800">
 
 If the referenced content type does not have a text field:
-<img src="/assets/img/content-fields-references-3.png">
+<img src="/assets/img/content-fields-references-3.png" width="800">
 
 The values of the selected field turn up in the reference field's list of records, like this:
-<img src="/assets/img/content-fields-references-4.png">
+<img src="/assets/img/content-fields-references-4.png" width="400">
 
 ### Reference context
 You alse need to pick a so-called 'Context' for the Reference field. You can choose from Global context and Local context.
