@@ -290,33 +290,37 @@ The name of the variable in the url used to determine what page is currently vis
 the title for the next page button. (Not required, default: &rsaquo;)
 
 `previous_text`  
-the title for the previous page button. (Not required, default: &rsaquo;)
+the title for the previous page button. (Not required, default: &lsaquo;)
 
 <p class='no-margin'>Input:</p>
 The following code will paginate all the projects of the site. On each page, 2 projects will be available.
 ```liquid
 {%- raw -%}
 {% paginate object_array: site.projects, per_page: 2, window_size: 2 %}
+  <h1>{{paginate.current_page}}
   {% for i in paginate.items %}
-    {% include i %}
+    <h3>{{i.title}}</h3>
   {% endfor %}
+  <a href="{{paginate.previous.url}}">{{paginate.next.url}}</a>
   <ul>
     {% for page in paginate.pages %}
       <li><a href="{{page.url}}">{{page.title}}</a></li>
     {% endfor %}
   </ul>
+  <a href="{{paginate.next.url}}">{{paginate.next.title}}</a>
 {% endpaginate %}
 {% endraw %}
 ```
 
-
+### `paginate` object
 Inside the `paginate` block, a `paginate` object is available with the following attributes.
+- `current_page`: the current page, a number.
+- `items`: an array of items in the slice of the input `object_array` corresponding to the current page.
+- `page_count`: the number of pages.
+- `pages`: an array of objects representing the pages. All objects `page` in `pages` have a `page.url`, corresponding to the url of a page, a `page.title`: represents the page title (a number), and a `page.is_link`, which allows you to check whether this page is a link or not. Pages outside the window are represented with ...
+- `next`: represents the next page. Has a `url` and a `title` attribute, similar to the attributes for pages.
+- `previous`: represents the previous page. Has a `url` and a `title` attribute, similar to the attributes for pages.
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
 ___
 
 ## tray
