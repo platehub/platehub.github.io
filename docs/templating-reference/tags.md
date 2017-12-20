@@ -269,6 +269,56 @@ Using this tag is not required, the default layout is `theme` (`layouts/theme.pl
 
 ___
 
+## paginate
+Allows to paginate an array of objects. Inside the `paginate` tag a `paginate` object will be available.
+
+Accepts the following arguments:
+
+`object_array`  
+an Array of objects, for example `site.pages`. (Required)
+
+`per_page`  
+amount of items shown per page. (Not required, default: 10)
+
+`window_size`  
+how many pages should be visible from the current page. E.g. if the current page is 5, and window size is 2, the pages available will be 3, 4, 5, 6, 7. Note that the first and the last page are always visible. (Not required, default: 3)
+
+`url_name`  
+The name of the variable in the url used to determine what page is currently visited. This allows to paginate multiple arrays of objects. (Not required, default: "page")
+
+`next_text`  
+the title for the next page button. (Not required, default: &rsaquo;)
+
+`previous_text`  
+the title for the previous page button. (Not required, default: &rsaquo;)
+
+<p class='no-margin'>Input:</p>
+The following code will paginate all the projects of the site. On each page, 2 projects will be available.
+```liquid
+{%- raw -%}
+{% paginate object_array: site.projects, per_page: 2, window_size: 2 %}
+  {% for i in paginate.items %}
+    {% include i %}
+  {% endfor %}
+  <ul>
+    {% for page in paginate.pages %}
+      <li><a href="{{page.url}}">{{page.title}}</a></li>
+    {% endfor %}
+  </ul>
+{% endpaginate %}
+{% endraw %}
+```
+
+
+Inside the `paginate` block, a `paginate` object is available with the following attributes.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+___
+
 ## tray
 Renders a [tray](/docs/theme-files#trays).
 
