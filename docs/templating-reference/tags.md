@@ -17,6 +17,7 @@ sub_menu_sub:
   - "[form_sender_field](#form_sender_field)"
   - "[include](#include)"
   - "[layout](#layout)"
+  - "[paginate](#paginate)"
   - "[tray](#tray)"
 ---
 
