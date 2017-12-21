@@ -329,9 +329,9 @@ Inside the `paginate` block, a `paginate` object is available with the following
 - `current_page`: the current page, a number.
 - `items`: an array of items in the slice of the input `object_array` corresponding to the current page.
 - `page_count`: the number of pages.
-- `pages`: an array of objects representing the pagination pages. All objects in `pages` have the attributes
-`url` (returning the url of a pagination page, e.g. /this-url?page=3),
-`index` (the pagination page's index number),
+- `pages`: an array of objects representing the pagination pages. All objects in `pages` have the attributes  
+`url` (returning the url of a pagination page, e.g. /this-url?page=3),  
+`index` (the pagination page's index number),  
 `is_link` (whether the pagination page is a link or not). `is_link` returns false at the current pagination page or if the page falls outside the `window_size` (in which case it's merely a '...').
 - `next`: represents the next pagination page. Also has `url`, `index` and `is_link` attributes.
 - `previous`: represents the previous pagination page. Also has `url`, `index` and `is_link` attributes.
