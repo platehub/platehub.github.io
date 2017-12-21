@@ -289,7 +289,7 @@ The name of the variable in the url used to determine what page is currently vis
 
 <p class='no-margin'>Input:</p>
 ```liquid
-{%- raw -%}{% paginate ... page_name: "turn" %}{% endraw %}
+{% raw %}{% paginate ... page_name: "turn" %}{% endraw %}
 ```
 
 <p class='no-margin'>Output:</p>
