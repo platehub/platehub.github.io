@@ -284,12 +284,12 @@ amount of items shown per page. (Not required, default: 10)
 `window_size`  
 how many pages should be visible from the current page. E.g. if the current page is 5, and window size is 2, the pages available will be 3, 4, 5, 6, 7. Note that the first and the last page are always visible. (Not required, default: 3)
 
-`page_name`  
-The name of the variable in the url used to determine what page is currently visited. This allows to paginate multiple arrays of objects. (Not required, default: "page")
+`pagination_name`  
+The name of the url parameter that is used to determine the current pagination number. This allows to paginate multiple arrays of objects. (Not required, default: "page")
 
 <p class='no-margin'>Input:</p>
 ```liquid
-{% raw %}{% paginate ... page_name: "turn" %}{% endraw %}
+{% raw %}{% paginate ... pagination_name: "turn" %}{% endraw %}
 ```
 
 <p class='no-margin'>Output:</p>
@@ -315,8 +315,8 @@ The following code will paginate all the projects of the site. On each page, 2 p
   {% endfor %}
   <a href="{{paginate.previous.url}}">{{paginate.previous.url}}</a>
   <ul>
-    {% for page in paginate.pages %}
-      <li><a href="{{page.url}}">{{page.title}}</a></li>
+    {% for pagination_page in paginate.pages %}
+      <li><a href="{{pagination_page.url}}">{{pagination_page.title}}</a></li>
     {% endfor %}
   </ul>
   <a href="{{paginate.next.url}}">{{paginate.next.title}}</a>
@@ -329,9 +329,9 @@ Inside the `paginate` block, a `paginate` object is available with the following
 - `current_page`: the current page, a number.
 - `items`: an array of items in the slice of the input `object_array` corresponding to the current page.
 - `page_count`: the number of pages.
-- `pages`: an array of objects representing the pages. All objects `page` in `pages` have a `page.url`, corresponding to the url of a page, a `page.title`: represents the page title (a number), and a `page.is_link`, which allows you to check whether this page is a link or not. Pages outside the window are represented with ...
-- `next`: represents the next page. Has a `url` and a `title` attribute, similar to the attributes for pages.
-- `previous`: represents the previous page. Has a `url` and a `title` attribute, similar to the attributes for pages.
+- `pages`: an array of objects representing the pagination pages. All objects in `pages` have the attributes `url`, `index` and `is_link`: returning the url of a pagination page (e.g. /this-url?page=3), the pagination page's index number, and whether the pagination page is a link or not. `is_link` returns false at the current pagination page or if the page falls outside the `window_size` (in which case it's merely a '...').
+- `next`: represents the next page. Also has `url`, `index` and `is_link` attributes.
+- `previous`: represents the previous page. Also has `url`, `index` and `is_link` attributes.
 
 ___
 
