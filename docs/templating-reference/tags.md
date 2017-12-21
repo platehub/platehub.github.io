@@ -284,8 +284,18 @@ amount of items shown per page. (Not required, default: 10)
 `window_size`  
 how many pages should be visible from the current page. E.g. if the current page is 5, and window size is 2, the pages available will be 3, 4, 5, 6, 7. Note that the first and the last page are always visible. (Not required, default: 3)
 
-`url_name`  
+`page_name`  
 The name of the variable in the url used to determine what page is currently visited. This allows to paginate multiple arrays of objects. (Not required, default: "page")
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}{% paginate ... page_name: "turn" %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```text
+/the-paginated-content?turn=4 # 4th pagination page
+```
 
 `next_text`  
 the title for the next page button. (Not required, default: &rsaquo;)
@@ -293,16 +303,17 @@ the title for the next page button. (Not required, default: &rsaquo;)
 `previous_text`  
 the title for the previous page button. (Not required, default: &lsaquo;)
 
-<p class='no-margin'>Input:</p>
 The following code will paginate all the projects of the site. On each page, 2 projects will be available.
+
+<p class='no-margin'>Input:</p>
 ```liquid
 {%- raw -%}
 {% paginate object_array: site.projects, per_page: 2, window_size: 2 %}
-  <h1>{{paginate.current_page}}
+  <h1>Current page: {{paginate.current_page}}</h1>
   {% for i in paginate.items %}
     <h3>{{i.title}}</h3>
   {% endfor %}
-  <a href="{{paginate.previous.url}}">{{paginate.next.url}}</a>
+  <a href="{{paginate.previous.url}}">{{paginate.previous.url}}</a>
   <ul>
     {% for page in paginate.pages %}
       <li><a href="{{page.url}}">{{page.title}}</a></li>
