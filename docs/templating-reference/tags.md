@@ -297,11 +297,11 @@ The name of the url parameter that is used to determine the current pagination n
 /the-paginated-content?turn=4 # 4th pagination page
 ```
 
-`next_text`  
+<!-- `next_text`  
 the title for the next page button. (Not required, default: &rsaquo;)
 
 `previous_text`  
-the title for the previous page button. (Not required, default: &lsaquo;)
+the title for the previous page button. (Not required, default: &lsaquo;) -->
 
 The following code will paginate all the projects of the site. On each page, 2 projects will be available.
 
@@ -313,13 +313,13 @@ The following code will paginate all the projects of the site. On each page, 2 p
   {% for project in paginate.items %}
     <h3>{{project.title}}</h3>
   {% endfor %}
-  <a href="{{paginate.previous.url}}">{{paginate.previous.url}}</a>
+  <a href="{{paginate.previous.url}}">&laquo; Prev</a>
   <ul>
     {% for pagination_page in paginate.pages %}
-      <li><a href="{{pagination_page.url}}">{{pagination_page.title}}</a></li>
+      <li><a href="{{pagination_page.url}}">{{pagination_page.index}}</a></li>
     {% endfor %}
   </ul>
-  <a href="{{paginate.next.url}}">{{paginate.next.title}}</a>
+  <a href="{{paginate.next.url}}">Next &raquo;</a>
 {% endpaginate %}
 {% endraw %}
 ```
