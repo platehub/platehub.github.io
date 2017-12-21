@@ -310,8 +310,8 @@ The following code will paginate all the projects of the site. On each page, 2 p
 {%- raw -%}
 {% paginate object_array: site.projects, per_page: 2, window_size: 2 %}
   <h1>Current page: {{paginate.current_page}}</h1>
-  {% for i in paginate.items %}
-    <h3>{{i.title}}</h3>
+  {% for project in paginate.items %}
+    <h3>{{project.title}}</h3>
   {% endfor %}
   <a href="{{paginate.previous.url}}">{{paginate.previous.url}}</a>
   <ul>
