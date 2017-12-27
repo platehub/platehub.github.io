@@ -10,6 +10,7 @@ sub_menu:
   - "include_sub_menu_sub"
 sub_menu_sub:
   - "[attachment](#attachment)"
+  - "[breadcrumbs](#breadcrumbs)"
   - "[column](#column)"
   - "[content_type](#content_type)"
   - "[element](#element)"
@@ -62,6 +63,29 @@ Returns an array of responsive image sizes, one for each of the site's viewports
 <p class='no-margin'>Output:</p>
 ```text
 ["https://bucket.s3.amazonaws.com/files/thumbs/path-xs.png", "https://bucket.s3.amazonaws.com/files/thumbs/path-sm.png", "htt...
+```
+___
+
+##breadcrumbs
+
+Breadcrumbs allow the developer to show where a post is relative to the root. It can help
+the user to navigate "up" from the current post in the site. The breadcrumbs object is an
+array of hashes representing each post above the current post, including the current post.
+Each hash contains a `title` and a `url` pair.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{% for breadcrumb in breadcrumbs %}
+  <a href="{{breadcrumb.url}}">{{breadcrumb.title}}</a>
+  {% if forloop.last != true %}
+    |
+  {% endif %}
+{% endfor %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<a href="/">Home</a>|<a href="/blogposts">Blogposts</a>|<a href="/blogposts/news-message">News Message</a>
 ```
 ___
 
