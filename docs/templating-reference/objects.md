@@ -66,7 +66,7 @@ Returns an array of responsive image sizes, one for each of the site's viewports
 ```
 ___
 
-##breadcrumbs
+## breadcrumbs
 
 Breadcrumbs allow the developer to show where a post is relative to the root. It can help
 the user to navigate "up" from the current post in the site. The breadcrumbs object is an
@@ -85,7 +85,9 @@ Each hash contains a `title` and a `url` pair.
 
 <p class='no-margin'>Output:</p>
 ```html
-<a href="/">Home</a>|<a href="/blogposts">Blogposts</a>|<a href="/blogposts/news-message">News Message</a>
+<a href="/">Home</a>|
+<a href="/blogposts">Blogposts</a>|
+<a href="/blogposts/news-message">News Message</a>
 ```
 ___
 
