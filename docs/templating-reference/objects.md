@@ -82,8 +82,8 @@ Breadcrumbs allow the developer to show where a post is relative to the root. It
 
 <p class='no-margin'>Output:</p>
 ```html
-<a href="/">Home</a>|
-<a href="/blogposts">Blogposts</a>|
+<a href="/">Home</a> |
+<a href="/blogposts">Blogposts</a> | 
 <a href="/blogposts/news-message">News Message</a>
 ```
 ___
