@@ -68,7 +68,7 @@ ___
 
 ## breadcrumbs
 
-Breadcrumbs allow the developer to show where a post is relative to the root. It can help the user to navigate 'up' from the current post in the site. The breadcrumbs object is an array, with objects representing each post 'above' the current post, including the current post. Each object in the breadcrumbs array contains a `title` and a `url` attribute.
+Breadcrumbs allows you to iterate you through Post tree structure, from root up to the current post. It can help the user to navigate 'up' from the current post in the site. The breadcrumbs object is an array, with objects representing each post 'above' the current post, including the current post. Each object in the breadcrumbs array contains a `title` and a `url` attribute.
 
 <p class='no-margin'>Input:</p>
 ```liquid
