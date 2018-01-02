@@ -68,10 +68,7 @@ ___
 
 ## breadcrumbs
 
-Breadcrumbs allow the developer to show where a post is relative to the root. It can help
-the user to navigate "up" from the current post in the site. The breadcrumbs object is an
-array of hashes representing each post above the current post, including the current post.
-Each hash contains a `title` and a `url` pair.
+Breadcrumbs allow the developer to show where a post is relative to the root. It can help the user to navigate "up" from the current post in the site. The breadcrumbs object is an array, with objects representing each post 'above' the current post, including the current post. Each object in the breadcrumbs array contains a `title` and a `url` attribute.
 
 <p class='no-margin'>Input:</p>
 ```liquid
