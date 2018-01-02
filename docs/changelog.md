@@ -7,13 +7,16 @@ page_url: /docs/changelog
 ---
 
 ### Coming up
-- Breadcrumbs functionality
 - Url structuring posts
 - Synchronization parent > child themes
 - Restructuring client S3 buckets
 - Moving theme assets to S3
 - Connect with external JSON feeds from within theme files
 - Theme debugging functions
+
+### 2 January 2018
+- Breadcrumbs functionality. [Read Docs](/docs/templating-reference/objects#breadcrumbs)
+- Minor bug fixes
 
 ### 21 December 2017
 - Pagination function inside theme files. [Read Docs](/docs/templating-reference/tags#paginate)
