@@ -74,16 +74,16 @@ Breadcrumbs allow the developer to show where a post is relative to the root. It
 ```liquid
 {% raw %}{% for breadcrumb in breadcrumbs %}
   <a href="{{breadcrumb.url}}">{{breadcrumb.title}}</a>
-  {% if forloop.last != true %}
+  {% unless forloop.last %}
     |
-  {% endif %}
+  {% endunless %}
 {% endfor %}{% endraw %}
 ```
 
 <p class='no-margin'>Output:</p>
 ```html
 <a href="/">Home</a> |
-<a href="/blogposts">Blogposts</a> | 
+<a href="/blogposts">Blogposts</a> |
 <a href="/blogposts/news-message">News Message</a>
 ```
 ___
