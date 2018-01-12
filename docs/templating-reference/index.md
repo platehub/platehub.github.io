@@ -37,7 +37,7 @@ This is indeed one beautiful site!
 Go to the [Tags](/docs/templating-reference/tags) page to read the docs on Tags.
 
 ## Filters
-Filters manipulate content that is put in. A filter functions as a little machine where you put something in, and it returns something else.
+Filters manipulate content that is put in. A filter functions as a little machine where you put something in, and it returns something else. Filters are separated by a pipe (`|`).
 
 <p class='no-margin'>Input:</p>
 ```liquid
