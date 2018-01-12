@@ -23,9 +23,11 @@ With Tags you can use some programming logic inside Liquid. E.g. to show content
 
 <p class='no-margin'>Input:</p>
 ```liquid
-{% if site.name == "A beautiful site" %}
-  This is indeed one beautiful site!
-{% endif %}
+{%- raw -%}
+  {% if site.name == "A beautiful site" %}
+    This is indeed one beautiful site!
+  {% endif %}
+{%- endraw -%}
 ```
 
 <p class='no-margin'>Output:</p>
@@ -41,7 +43,9 @@ Filters manipulate content that is put in. A filter functions as a little machin
 
 <p class='no-margin'>Input:</p>
 ```liquid
+{%- raw -%}
 {{ "A beautiful site" | reverse }}
+{%- endraw -%}
 ```
 
 <p class='no-margin'>Output:</p>
@@ -56,7 +60,9 @@ An Object represents a certain record (from the Plate database) inside Liquid. Y
 
 <p class='no-margin'>Input:</p>
 ```liquid
-{{ site.name }}
+{%- raw -%}
+  {{ site.name }}
+{%- endraw -%}
 ```
 
 <p class='no-margin'>Output:</p>
