@@ -44,13 +44,13 @@ Filters manipulate content that is put in. A filter functions as a little machin
 <p class='no-margin'>Input:</p>
 ```liquid
 {%- raw -%}
-{{ "A beautiful site" | reverse }}
+{{ "A beautiful site" | append: " brought to you by Plate" }}
 {% endraw %}
 ```
 
 <p class='no-margin'>Output:</p>
 ```text
-etis lufituaeb A
+A beautiful site brought to you by Plate
 ```
 
 Go to the [Filters](/docs/templating-reference/filters) page to read the filters docs.
