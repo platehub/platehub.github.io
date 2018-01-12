@@ -50,7 +50,7 @@ Filters manipulate content that is put in. A filter functions as a little machin
 
 <p class='no-margin'>Output:</p>
 ```text
-"etis lufituaeb A"
+etis lufituaeb A
 ```
 
 Go to the [Filters](/docs/templating-reference/filters) page to read the filters docs.
