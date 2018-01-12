@@ -24,9 +24,9 @@ With Tags you can use some programming logic inside Liquid. E.g. to show content
 <p class='no-margin'>Input:</p>
 ```liquid
 {%- raw -%}
-  {% if site.name == "A beautiful site" %}
-    This is indeed one beautiful site!
-  {% endif %}
+{% if site.name == "A beautiful site" %}
+  This is indeed one beautiful site!
+{% endif %}
 {%- endraw -%}
 ```
 
@@ -61,7 +61,7 @@ An Object represents a certain record (from the Plate database) inside Liquid. Y
 <p class='no-margin'>Input:</p>
 ```liquid
 {%- raw -%}
-  {{ site.name }}
+{{ site.name }}
 {%- endraw -%}
 ```
 
