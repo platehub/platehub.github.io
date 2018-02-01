@@ -54,7 +54,7 @@ Below a more detailed description for each layout component.
 Each web page with a URL within a Plate site is a post, consisting of a [post type](/docs/content-types#about-content-types) and corresponding content fields. The post is the top level container for Plate's frontend editor, which is loaded in with the tag [`content_for post`](https://platehub.github.io/docs/templating-reference/tags#content_for), which in turn loads in the rest of the layout scaffold. Starting with:
 
 #### Sections
-Sections are meant to divide the post in (fullwidth) page sections. Each section can have it's own [template](/docs/theme-files#theme-templates), if needed. This way you can have a section with a background image, and a section with extra top and bottom padding, for example. This makes Plate sites compatible with modern web design. It also makes creating one-page site possible.
+Sections are meant to divide the post in (fullwidth) page sections. Each section can have it's own [template](/docs/theme-files#theme-templates), if needed. This way you can have a section with a background image, and a section with extra top and bottom padding, for example. This makes Plate sites compatible with modern web design. It also makes creating one-page site possible. Sections consist of:
 
 #### Rows
 Rows are ordered vertically within a section, and can be reordered by the user.
