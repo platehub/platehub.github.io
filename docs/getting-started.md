@@ -48,7 +48,7 @@ The dragging/dropping of content elements, and resizing plus changing the order 
 
 ![Plate content scheme](/assets/img/getting-started--content-schema.png)
 
-Below a more detailed description for each layout component
+Below a more detailed description for each layout component.
 
 ##### Post
 Each web page with a URL within a Plate site is a post, consisting of a [post type](/docs/content-types#about-content-types) and corresponding content fields. The post is the top level container for Plate's frontend editor, which is loaded in with the tag [{% content_for post %}](https://platehub.github.io/docs/templating-reference/tags#content_for), which in turn loads in the rest of the layout scaffold. Starting with:
