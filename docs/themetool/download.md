@@ -2,7 +2,6 @@
 layout: docs
 title: Plate Themetool
 page_url: /docs/themetool/downloads
-menu_item: true
 id: "themetool"
 sub_menu:
 - "[Download](/docs/themetool/download)"
