@@ -7,12 +7,18 @@ page_url: /docs/changelog
 ---
 
 ### Coming up
-- Url structuring posts
-- Synchronization parent > child themes
+
+
 - Restructuring client S3 buckets
-- Moving theme assets to S3
 - Connect with external JSON feeds from within theme files
 - Theme debugging functions
+
+## 30 January 2018
+- Synchronization parent > child themes
+- Moving theme assets to S3
+
+### 4 January 2018
+- Url structuring posts
 
 ### 2 January 2018
 - Breadcrumbs functionality. [Read Docs](/docs/templating-reference/objects#breadcrumbs)
