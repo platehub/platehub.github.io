@@ -8,12 +8,12 @@ page_url: /docs/changelog
 
 ### Coming up
 
-
+- API
 - Restructuring client S3 buckets
 - Connect with external JSON feeds from within theme files
 - Theme debugging functions
 
-## 30 January 2018
+### 30 January 2018
 - Synchronization parent > child themes
 - Moving theme assets to S3
 

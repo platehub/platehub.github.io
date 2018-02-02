@@ -9,7 +9,7 @@ sub_menu:
 On this page you can find the latest version of the Themetool, and also find older versions of the Themetool. Of course it is advised to only use the latest version!
 
 ## Latest version (1.1) - 2 February 2018
-<a href="https://bit.ly/plate-theme-tool-mac" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-apple"></i> Download for Mac</a>
+<a href="/downloads/themetool/osx/plate-themetool.1.1.dmg" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-apple"></i> Download for Mac</a>
 <a href="/downloads/themetool/win/plate_setup.1.1.exe" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-windows"></i> Download for Windows</a>
 
 Or Linux users, [download the JAR file](/downloads/themetool/jar/plate-themetool.1.1.jar), which works on every OS with Java installed.
