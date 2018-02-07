@@ -5,6 +5,7 @@ page_url: /docs/theme-files
 menu_item: true
 id: "theme-files"
 sub_menu:
+  - "[Changing derived site themes](#changing-derived-site-themes)"
   - "[Inline or 'Layoutable'](#inline-or-layoutable)"
   - "[Variables](#variables)"
   - "[Theme Layouts](#theme-layouts)"
@@ -20,6 +21,54 @@ Plate themes consist of theme files, which are only HTML files with a [templatin
 Themes video tutorials (Dutch):
 <iframe src="https://player.vimeo.com/video/242049896?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <iframe src="https://player.vimeo.com/video/242057383?color=e95d21&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+## Changing derived site themes
+
+Derived sites are sites that use 'library themes' or 'public themes'. These themes were not custom made for a particular site or client, but have multiple sites that use that theme. It is important to remember that the source theme can push updates to all derived site themes. These updates override the existing theme files, [content types](/docs/content-types) and [content fields](/docs/content-fields). If you use a 'library theme' for your site, you can choose to unlink it from parent theme updates. However, if you want to use the parent theme's updates, while still being able to change your derived site's theme, there are a few things you can do:
+
+#### For theme files
+You can create a child theme inside your theme. This is done by creating a folder `child_theme` in the root of your theme. Inside the `child_theme` folder you can create theme files with the same paths as the regular theme files. When your site loads, Plate first looks if there are child theme files, and serves these if there are. This way you can preserve the original theme, have updates from the parent theme, while still being able to have your own custom theme. However, if you create new theme files that are not present in the original theme, you can place them among the regular theme files, instead of in the `child_theme` folder. Parent theme updates only apply to theme files that are also present in the parent theme, so you can safely create new files. However, if you delete an existing file from the original theme, a parent theme update will recreate it.
+
+**Example**  
+Let's say you want to change the css of a derived site. The best course of action is to create a new css file inside the original theme's assets folder, let's say `assets/css/my-css.css`. In this css file you can override the site's css to whatever you want. To loaded your extra css file, you need to override the existing file where all css files are loaded. Let's assume the optimal situation is the case, the theme builder made a partial for all assets:
+
+<p class='no-margin'><code class='highlighter-rouge'>layouts/theme.plate</code></p>
+```liquid
+{%- raw -%}
+<head>
+  {% include "layouts/asset_files" %}
+</head>
+{% endraw %}
+```
+
+<p class='no-margin'><code class='highlighter-rouge'>layouts/_asset_files.plate</code></p>
+```liquid
+{%- raw -%}
+{{ 'css/existing-css-file.css' | asset_url | stylesheet_tag }}
+{% endraw %}
+```
+
+To load in your new css file, you'd need to override `layouts/_asset_files.plate` inside the `child_theme` folder:
+<p class='no-margin'><code class='highlighter-rouge'>child_theme/layouts/_asset_files.plate</code></p>
+```liquid
+{%- raw -%}
+{{ 'css/existing-css-file.css' | asset_url | stylesheet_tag }}
+{{ 'css/my-css.css' | asset_url | stylesheet_tag }}
+{% endraw %}
+```
+
+Now you can change your site's css inside `my-css.css`, without having to change the original theme, so you can safely profit from the parent theme's updates.
+
+<img src="/assets/img/theme-files--derived-1.png">
+`child_theme/layouts/_asset_files.plate` overrides the 'regular' `layouts/_asset_files.plate`.
+
+#### For content fields and content types
+Except for the content type (plural) name and title, you can change attributes of content types and content fields (including validation settings) to your liking. However, you cannot delete content types or content fields that were created by the parent theme.
+
+#### Library theme builders info
+If you are creating a library theme or public theme, keep the following best practices in mind:
+- Use as many [included](/docs/templating-reference/tags#include) [partials](#partials) as possible. The smaller the theme files, the less a user has to override, if he wants to.
+- Make sure to send a notification about an update before actually pushing the update. You can send a notification to theme users from the theme dashboard.
 
 ## Inline or 'Layoutable'
 
