@@ -60,7 +60,7 @@ To load in your new css file, you'd need to override `layouts/_asset_files.plate
 Now you can change your site's css inside `my-css.css`, without having to change the original theme, so you can safely profit from the parent theme's updates.
 
 <img src="/assets/img/theme-files--derived-1.png">
-`child_theme/layouts/_asset_files.plate` overrides the 'regular' `layouts/_asset_files.plate`.
+`child_theme/layouts/_asset_files.plate` overrides the 'regular' `layouts/_asset_files.plate`. Your custom `my-css.css` can safely be placed among the 'regular' theme files, in the theme root.
 
 #### For content fields and content types
 Except for the content type (plural) name and title, you can change attributes of content types and content fields (including validation settings) to your liking. However, you cannot delete content types or content fields that were created by the parent theme.
