@@ -9,10 +9,12 @@ page_url: /docs/changelog
 ### Coming up
 
 - API
-- Connect with external JSON feeds from within theme files
 - Restructuring client S3 buckets
-- Theme debugging functions
 - Wizard
+
+### 13 February 2018
+- HTTP request tag. Useful to connect with external data sources like API's. [Read Docs](/docs/templating-reference/tags#http_requests)
+- Theme debugging: to_json filter. [Read Docs](/docs/templating-reference/filters#to_json)
 
 ### 30 January 2018
 - Synchronization parent > child themes
