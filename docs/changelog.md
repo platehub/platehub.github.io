@@ -13,7 +13,7 @@ page_url: /docs/changelog
 - Wizard
 
 ### 13 February 2018
-- HTTP request tag. Useful to connect with external data sources like API's. [Read Docs](/docs/templating-reference/tags#http_requests)
+- HTTP request tag. Useful to connect with external data sources like API's. [Read Docs](/docs/templating-reference/tags#http_request)
 - Theme debugging: to_json filter. [Read Docs](/docs/templating-reference/filters#to_json)
 
 ### 30 January 2018
