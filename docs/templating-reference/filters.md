@@ -17,6 +17,7 @@ sub_menu_sub:
   - "[parameterize](#parameterize)"
   - "[script_tag](#script_tag)"
   - "[stylesheet_tag](#stylesheet_tag)"
+  - "[to_json](#to_json)"
   - "[where](#where)"
 #  - "[where_before_date](#where_before_date)"
 ---
@@ -201,6 +202,35 @@ Returns a HTML stylesheet link-tag
 <p class='no-margin'>Output:</p>
 ```html
 <link rel="stylesheet" href="path-to-asset.css"></link>
+```
+
+___
+
+## to_json
+
+Turns input into JSON, when possible. If input cannot be turned into JSON object, the filter just returns the input again.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ site | to_json }}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```json
+{"id": 783, "content_type": { "name": "site", "title": "Site" }, "name": "A beautiful Site", ...}
+```
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+# params = { 'param_key_1' => 'param_val_1', 'param_key_2' => 'param_val_2' }
+{{ params | to_json }}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```json
+{"param_key_1": "param_val_1", "param_key_2": "param_val_2"}
 ```
 
 ___

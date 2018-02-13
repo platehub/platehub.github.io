@@ -15,6 +15,7 @@ sub_menu_sub:
   - "[form_field](#form_field)"
   - "[form_label](#form_label)"
   - "[form_sender_field](#form_sender_field)"
+  - "[http_request](#http_request)"
   - "[include](#include)"
   - "[layout](#layout)"
   - "[paginate](#paginate)"
@@ -226,6 +227,70 @@ Like the regular form_fields, you can add custom html attributes, by passing `ke
 ```html
 <input type="text" name="form_message[meta][sender][email]" id="1876_sender_field_email" data-test-data="data-test-value" placeholder="My Placeholder">
 ```
+
+___
+
+## http_request
+Makes a request to the passed target, useful for API connections. HTTP Headers and params can be set for the request. Inside the block the response is accessible as `response` variable.
+
+Accepts the following arguments:
+
+`target`  
+The target for the HTTP request. E.g. https://www.apiserver.com/api/v1/api_endpoint
+
+`params`  
+Multiple key/value attributes that serve as url parameters for GET requests, and request body for POST and PUT requests.
+
+`headers`  
+Multiple key/value attributes that serve as request headers. The keys must be downcased and with underscores, but get converted to camelcased with dashes. E.g. `{x_my_header_key: "header_val"}` becomes the header: `X-My-Header-Key: header_val`.
+
+`method`  
+Sets the request method: GET, POST or PUT. Defaults to GET.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{% http_request target: 'https://www.apiserver.com/api/v1/api_endpoint', method: 'get', params: { param_key_1: 'param_val_1' }, headers: { authentication: 'Token token=ksuhf3ygjyw3fskuddh3uhr4hwr556h6j6eda' } %}
+
+{{ response }}
+{{ response | to_json }}
+
+{% for response_item in response %}
+  {{ response_item.result_key }}
+{% endfor %}
+
+{{ params }}
+
+{% endhttp_request %}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```text
+[{"result_key" => "result value 1"}, {"result_key" => "result value 2"}]
+[{"result_key": "result value 1"}, {"result_key": "result value 2"}]
+
+result value 1
+result value 2
+
+{'param_key_1' => 'param_val_1'}
+```
+
+Note that the arguments `params` and `headers` have nested key/value pair arguments. These need to be surrounded by curly braces (`{ ... }`).
+
+The following variables are available inside the block:
+
+`response`  
+The response of the request. If the response was JSON, the data converts to a Liquid object. You can use the [to_json](/docs/templating-reference/filters#to_json) filter to turn it back to json.
+
+`params`  
+The passed params as a Liquid object.
+
+`method`  
+The request method. GET, POST or PUT
+
+`target`  
+The full target url, so including passed params. E.g. https://www.apiserver.com/api/v1/api_endpoint?param_key_1=param_val_1
 
 ___
 
