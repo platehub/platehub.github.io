@@ -231,7 +231,7 @@ Like the regular form_fields, you can add custom html attributes, by passing `ke
 ___
 
 ## http_request
-Makes a request to the passed target, useful for API connections. HTTP Headers and params can be set for the request. Inside the block the response is accessible as `response` variable.
+Makes a request to the passed target and fetches the body. Useful for API connections. HTTP Headers and params can be set for the request. Inside the block the response is accessible as `response` variable.
 
 Accepts the following arguments:
 
