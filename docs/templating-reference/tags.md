@@ -239,13 +239,13 @@ Accepts the following arguments:
 The target for the HTTP request. E.g. https://www.apiserver.com/api/v1/api_endpoint
 
 `params`  
-Multiple key/value attributes that serve as url parameters for GET requests, and request body for POST and PUT requests.
+Multiple key/value attributes that serve as url parameters for GET requests, and request body for POST, PUT and DELETE requests.
 
 `headers`  
 Multiple key/value attributes that serve as request headers. The keys must be downcased and with underscores, but get converted to camelcased with dashes. E.g. `{x_my_header_key: "header_val"}` becomes the header: `X-My-Header-Key: header_val`.
 
 `method`  
-Sets the request method: GET, POST or PUT. Defaults to GET.
+Sets the request method: GET, POST, PUT or DELETE. Defaults to GET.
 
 <p class='no-margin'>Input:</p>
 ```liquid
@@ -287,7 +287,7 @@ The response of the request. If the response was JSON, the data converts to a Li
 The passed params as a Liquid object.
 
 `method`  
-The request method. GET, POST or PUT
+The request method. GET, POST, PUT or DELETE
 
 `target`  
 The full target url, so including passed params. E.g. https://www.apiserver.com/api/v1/api_endpoint?param_key_1=param_val_1
