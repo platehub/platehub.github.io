@@ -281,10 +281,10 @@ Note that the arguments `params` and `headers` have nested key/value pair argume
 The following variables are available inside the block:
 
 `response`  
-The response of the request. If the response was JSON, the data converts to a Liquid object. You can use the [to_json](/docs/templating-reference/filters#to_json) filter to turn it back to json.
+The response of the request. If the response was JSON, the data converts to a Liquid [object](/docs/templating-reference/objects). You can use the [to_json](/docs/templating-reference/filters#to_json) filter to turn it back to json.
 
 `params`  
-The passed params as a Liquid object.
+The passed params as a Liquid [object](/docs/templating-reference/objects).
 
 `method`  
 The request method. GET, POST, PUT or DELETE
