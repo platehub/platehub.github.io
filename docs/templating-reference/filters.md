@@ -288,7 +288,9 @@ returns the same result as
 {% raw %}{{ site.posts | where: "title", "Only this title", "published_at", 'March 25 2018', "<" }}{% endraw %}
 ```
 
-Returns every post that has "Only this title" as the title **OR** is created before March 25 2018. If you want to have only the posts that have the title **AND** are created before March 25 2018, you can chain the filter like this:
+Returns every post that has "Only this title" as the title **OR** is created before March 25 2018.
+
+If you want to have only the posts that have the title **AND** are created before March 25 2018, you can chain the filter like this:
 
 <p class='no-margin'>Input:</p>
 ```liquid
