@@ -236,7 +236,7 @@ ___
 
 ## where
 
-Select all the objects in an array where the attribute (first argument) returns a certain value (second argument). The default comparison operator is `==` (equal to), but you can pass another operator. You can choose from:
+Select all the objects in an array where the attribute (first argument) returns a certain value (second argument). The default comparison operator is `==` (equal to), but you can pass another operator as the third argument. You can choose from:
 
 `==` (equal to)  
 `!=` (not equal to)  
