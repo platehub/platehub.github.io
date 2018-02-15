@@ -12,6 +12,9 @@ page_url: /docs/changelog
 - Restructuring client S3 buckets
 - Wizard
 
+### 15 February 2018
+- Extended where filter. [Read Docs](/docs/templating-reference/filters#where)
+
 ### 13 February 2018
 - HTTP request tag. Useful to connect with external data sources like API's. [Read Docs](/docs/templating-reference/tags#http_request)
 - Theme debugging: to_json filter. [Read Docs](/docs/templating-reference/filters#to_json)

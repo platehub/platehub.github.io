@@ -19,7 +19,6 @@ sub_menu_sub:
   - "[stylesheet_tag](#stylesheet_tag)"
   - "[to_json](#to_json)"
   - "[where](#where)"
-#  - "[where_before_date](#where_before_date)"
 ---
 
 ## asset_url
@@ -237,11 +236,61 @@ ___
 
 ## where
 
-Select all the objects in an array where the attribute (first argument) returns a certain value (second argument).
+Select all the objects in an array where the attribute (first argument) returns a certain value (second argument). The default comparison operator is `==` (equal to), but you can pass another operator. You can choose from:
+
+`==` (equal to)  
+`!=` (not equal to)  
+`>` (greater than)  
+`<` (less than)  
+`>=` (greater than or equal to)  
+`<=` (less than or equal to)  
+`contains` (contains substring or subarray for Strings and Arrays)
 
 <p class='no-margin'>Input:</p>
 ```liquid
 {% raw %}{{ site.posts | where: "title", "Only this title" }}{% endraw %}
 ```
 
-Returns sub-array of posts.
+Returns all posts that have 'Only this title' as the title.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ site.posts | where: "categories", category, "contains" }}{% endraw %}
+```
+
+Returns all posts that have the passed category as category. In this case `post.categories` returns an array, so the `contains` operator must be used.
+
+You can also compare by date, which get automatically parsed when the passed attribute name returns a date. The keys `now` or `today` are parsed as the current time.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ site.posts | where: "published_at", 'March 25 2018', "<" }}{% endraw %}
+```
+
+Returns all posts that were published before 25 March 2018.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ site.posts | where: "published_at", 'now', "<" }}{% endraw %}
+```
+
+Returns all posts that were published in the past.
+
+#### Logical operators, and/or
+
+You can pass more than three arguments to the where filter, to use multiple rules to compare in the selection. Every third argument is the operator and is optional. E.g. passing  
+`"published_at", 'March 25 2018', "title", "Only this title"`  
+returns the same result as  
+`"published_at", 'March 25 2018', "==", "title", "Only this title", "=="`.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ site.posts | where: "title", "Only this title", "published_at", 'March 25 2018', "<" }}{% endraw %}
+```
+
+Returns every post that has "Only this title" as the title **OR** is created before March 25 2018. If you want to have only the posts that have the title **AND** are created before March 25 2018, you can chain the filter like this:
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ site.posts | where: "title", "Only this title" | where: "published_at", 'March 25 2018', "<" }}{% endraw %}
+```
