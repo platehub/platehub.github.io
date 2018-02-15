@@ -278,7 +278,7 @@ Returns all posts that were published in the past.
 
 #### Logical operators, and/or
 
-You can pass more than three arguments to the where filter, to use multiple rules to compare in the selection. Every third argument is the operator and is optional. E.g. passing  
+You can pass more than three arguments to the where filter, to use multiple rules to compare in the selection. Every third argument is the comparison operator and is optional. E.g. passing  
 `"published_at", 'March 25 2018', "title", "Only this title"`  
 returns the same result as  
 `"published_at", 'March 25 2018', "==", "title", "Only this title", "=="`.
