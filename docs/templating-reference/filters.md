@@ -260,7 +260,7 @@ Returns all posts that have 'Only this title' as the title.
 
 Returns all posts that have the passed category as category. In this case `post.categories` returns an array, so the `contains` operator must be used.
 
-You can also compare by date and time, which gets parsed automatically when the passed attribute name returns a date. The keys `now` or `today` are parsed as the current time.
+You can also compare by date and time, which gets parsed automatically when the passed attribute name returns a date. The words `now` or `today` are parsed as the current time.
 
 <p class='no-margin'>Input:</p>
 ```liquid
