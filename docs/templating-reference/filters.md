@@ -244,7 +244,7 @@ Select all the objects in an array where the attribute (first argument) returns 
 `<` (less than)  
 `>=` (greater than or equal to)  
 `<=` (less than or equal to)  
-`contains` (contains substring or subarray for Strings and Arrays)
+`contains` (contains substring in String or a certain object in Array)
 
 <p class='no-margin'>Input:</p>
 ```liquid
