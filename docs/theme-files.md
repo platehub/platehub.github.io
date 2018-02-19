@@ -113,6 +113,9 @@ This adds all Plate dependencies, like all assets used when the site is in edit 
 
 **Heads up!** The Theme Layout is something else entirely than the [Plate Nested Layout structure](/docs/getting-started#the-plate-nested-layout-structure)!
 
+#### 404
+By creating the theme file `layouts/404.plate` you can create a custom 404 Page.
+
 ## Trays
 Trays are the same as sections, and have the same nested layout components (Rows, and so on). The main difference from sections is that trays do not fall inside the Nested Layout Structure. Trays only belong to the site. This way you can add a nested Layout structure from the section level down on any place you want, not just inside a Post context. This is useful for footers and headers for example. You want to have the nested layout structure here, but it doesn't necessarily fall under a post. You can render a tray by using the [tray tag](/docs/templating-reference/tags#tray).
 

@@ -329,7 +329,10 @@ Sets the [theme layout](/docs/theme-files#theme-layouts). Whatever you pass must
 
 This renders the `layouts/some_layout.plate` theme layout file.
 
-Using this tag is not required, the default layout is `theme` (`layouts/theme.plate`).
+Using this tag is not required, the default layout is `theme` (`layouts/theme.plate`). If you do not want any layout, use:
+```liquid
+{% raw %}{% layout false %}{% endraw %}
+```
 
 **Don't forget to add the `{% raw %}{% include "content_for_head" %}{% endraw %}` tag in your theme layout file's `<head>`.**
 
@@ -368,7 +371,7 @@ the title for the next page button. (Not required, default: &rsaquo;)
 `previous_text`  
 the title for the previous page button. (Not required, default: &lsaquo;) -->
 
-The following code will paginate all the projects of the site. On each page, 2 projects will be available.
+The following code will paginate all projects of the site. On each page, 2 projects will be available.
 
 <p class='no-margin'>Input:</p>
 ```liquid

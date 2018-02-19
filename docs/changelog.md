@@ -12,9 +12,12 @@ page_url: /docs/changelog
 - Restructuring client S3 buckets
 - Wizard
 
+### 19 February 2018
+- Custom 404 pages. [Read Docs](/docs/templating-reference/filters#where)
+- Minor bug fixes
+
 ### 15 February 2018
 - Extended where filter. [Read Docs](/docs/templating-reference/filters#where)
-- Minor bug fixes
 
 ### 13 February 2018
 - HTTP request tag. Useful to connect with external data sources like API's. [Read Docs](/docs/templating-reference/tags#http_request)

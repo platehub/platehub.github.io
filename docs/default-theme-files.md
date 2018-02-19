@@ -29,6 +29,14 @@ If you do not create theme files with the same path in your own theme, these the
 {% endraw %}
 ```
 
+### `layouts/404.plate`
+
+```liquid
+{%- raw -%}
+<h1>404 Pagina niet gevonden</h1>
+{% endraw %}
+```
+
 ### `pages/index.plate`
 
 ```liquid
