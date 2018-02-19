@@ -13,7 +13,7 @@ page_url: /docs/changelog
 - Wizard
 
 ### 19 February 2018
-- Custom 404 pages. [Read Docs](/docs/templating-reference/filters#where)
+- Custom [404 pages](/docs/theme-files#404).
 - Minor bug fixes
 
 ### 15 February 2018
