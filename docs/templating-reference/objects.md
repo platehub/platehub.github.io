@@ -230,6 +230,27 @@ Returns query string. Everything after '?'.
 full=1
 ```
 
+#### request.query_object
+Converts the query string into an object
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ request.query_object }}{% endraw %}
+```
+<p class='no-margin'>Output:</p>
+```text
+{"full" => "1", "page" => "5"}
+```
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ request.query_object.page }}{% endraw %}
+```
+<p class='no-margin'>Output:</p>
+```text
+5
+```
+
 #### request.url
 Returns the full current url.
 

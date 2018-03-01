@@ -90,7 +90,7 @@ The following global assets are available:
 Note that this method of loading jQuery is highly preferred over doing it yourself by storing it inside your theme or getting it from a CDN directly. Plate itself also uses jQuery in edit mode and this conflicts with yours if you load it directly in your theme. Using the `global_asset_url` filter for jQuery prevents this.
 
 ```ruby
-"lightbox" # Default version: 2.9.0. Available types: css, js.
+"lightbox" # Default version: 2.10.0. Available types: css, js.
 ```
 ```ruby
 "animate" # Default version: 3.5.2. Available types: css.
