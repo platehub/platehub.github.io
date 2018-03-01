@@ -227,7 +227,7 @@ Returns query string. Everything after '?'.
 ```
 <p class='no-margin'>Output:</p>
 ```text
-full=1
+full=1&page=5
 ```
 
 #### request.query_object
