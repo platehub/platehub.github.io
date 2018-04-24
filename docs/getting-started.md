@@ -114,7 +114,7 @@ Of course you are not required to use Plate's grid system. If you like another g
 ## Uploading your theme
 After [creating and downloading your theme](#how-to-create-a-theme) (you can also [download a specific site's theme](#a-sites-theme)) you want to add changes to it and upload these changes. Plate's dev team created a deployment tool to ensure this process goes with as much ease as possible. You only have to turn on the listener, and go edit your theme files. The theme tool does the rest.
 
-Read more about the [Plate Theme Tool](/docs/theme-tool).
+Read more about the [Plate Theme Tool](/docs/themetool).
 
 ## Creating a site
 As a partner you can create sites for your client. To do this follow these steps:

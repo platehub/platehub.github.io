@@ -86,7 +86,7 @@ page_url: /docs/changelog
 - Multilanguage support
 
 ### July 2017
-- Launch Plate Theme Tool [Read docs](/docs/theme-tool)
+- Launch Plate Theme Tool [Read docs](/docs/themetool)
 
 ### 26 June 2017
 - Bug fixes
