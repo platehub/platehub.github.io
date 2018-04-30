@@ -8,9 +8,14 @@ page_url: /docs/changelog
 
 ### Coming up
 
+- Caching
+- Image processing
 - API
 - Restructuring client S3 buckets
 - Wizard
+
+### March 2018
+- Several major bug fixes
 
 ### 19 February 2018
 - Custom [404 pages](/docs/theme-files#404)
