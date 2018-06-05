@@ -14,6 +14,14 @@ page_url: /docs/changelog
 - Restructuring client S3 buckets
 - Wizard
 
+### May 2018
+- Improved function calling on OOP instances, in the case of client-created content fields.
+- Finished asynchronous job environment
+
+### April 2018
+- Started creating environment for asynchronously running heavy duty jobs, to improve usability when users initiate these jobs (site creation, theme sync, etc.)
+- Multiple system and usability improvements
+
 ### March 2018
 - Several major bug fixes
 
