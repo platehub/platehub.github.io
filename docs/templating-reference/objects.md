@@ -189,6 +189,9 @@ Returns post SEO description.
 #### post.content_type
 Returns [content_type](#content_type) object.
 
+#### post.parent
+Returns parent, if there is a parent set in de Post settings.
+
 ___
 
 ## request
