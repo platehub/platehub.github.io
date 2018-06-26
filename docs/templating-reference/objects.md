@@ -41,29 +41,92 @@ ___
 
 The attachment object is returned when an attribute of a [media field](/docs/content-fields#media-field) is called. E.g. `{% raw %}{{ post.featured_image }}{% endraw %}` (when featured_image is a media field) returns an attachment object.
 
+#### attachment.crop
+
+Returns the crop values of the attachment if it's an image. The values are: `left, top, width, height`. By default the left and top are set to 0, and width and height to 100% of the image size, i.e. no crop. The attachment's crop values can be changed by [enabling inline crop in the `img_tag` filter](/docs/templating-reference/filters#inline-cropping).
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ attachment.crop }}{% endraw %}
+```
+<p class='no-margin'>Output (no crop):</p>
+```text
+0,0,450,360
+```
+
+<p class='no-margin'>Output (horizontal crop):</p>
+```text
+0,100,450,200
+```
+
+<p class='no-margin'>Output (vertical crop):</p>
+```text
+120,0,300,360
+```
+
+<p class='no-margin'>You can use the crop values in the <a href="/docs/templating-reference/filters#img_url"><code>img_url</code> filter</a> like this:</p>
+```liquid
+{% raw %}{{ attachment | img_url: 600, crop: attachment.crop }}{% endraw %}
+```
+
 #### attachment.src
 
-Returns the url of the attachment.
+Returns the original url of the attachment.
 <p class='no-margin'>Input:</p>
 ```liquid
 {% raw %}{{ post.featured_image.src }}{% endraw %}
 ```
 <p class='no-margin'>Output:</p>
 ```text
-https://bucket.s3.amazonaws.com/files/featured-image-path.png
+https://plate-attachments.s3.amazonaws.com/images/12ab34cd56/featured-image-path.png
 ```
 
-#### attachment.responsive_img_urls
-Returns an array of responsive image sizes, one for each of the site's viewports. Works great in conjunction with the [img_tag filter](/docs/templating-reference/filters#img_tag).
+#### attachment.meta
+
+Returns an object with the attachment's meta information, i.e. file mime type, file size, image dimensions if attachment is an image, etc.
 
 <p class='no-margin'>Input:</p>
 ```liquid
-{% raw %}{{ post.featured_image.responsive_img_urls }}{% endraw %}
+{%- raw -%}
+{{ attachment.meta }}
+{{ attachment.meta.is_image }}
+{{ attachment.meta.file_size }}
+{{ attachment.meta.height }} x {{ attachment.meta.width }}
+{% endraw %}
 ```
 <p class='no-margin'>Output:</p>
 ```text
-["https://bucket.s3.amazonaws.com/files/thumbs/path-xs.png", "https://bucket.s3.amazonaws.com/files/thumbs/path-sm.png", "htt...
+{"mime_type" => "image/jpeg", "file_size" => 12345, "ext" => "jpeg", "format" => "jpg"...
+true
+12345
+450 x 360
 ```
+
+The meta object has the following attributes for all files:
+- `mime_type`
+- `file_size`
+- `ext` (file extension)
+
+When the attachment is an image, it has the following attributes as well:
+- `format` (image type: jpg, png, etc)
+- `width`
+- `height`
+- `aspect_ratio`
+- `landscape` (returns true when image is in landscape)
+
+#### attachment.file_name
+
+Returns the file's name, the part of the `src` url that represents the file.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ post.featured_image.file_name }}{% endraw %}
+```
+<p class='no-margin'>Output:</p>
+```text
+featured-image-path.png
+```
+
 ___
 
 ## breadcrumbs

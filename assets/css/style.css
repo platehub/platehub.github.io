@@ -74,3 +74,31 @@ hr{
 #sidebar-wrapper .bottom-part span a{
   text-decoration: underline;
 }
+
+/* Images */
+
+.sample-images {
+  position: relative;
+  max-width: 800px;
+  margin-top: 24px;
+}
+
+.sample-image:first-child, .sample-image:last-child {
+  margin: 0;
+}
+
+.sample-image {
+  width: 30%;
+  margin: 0 3%;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+.sample-image img {
+  width: 100%;
+}
+
+img {
+  vertical-align: middle;
+}

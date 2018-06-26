@@ -32,7 +32,7 @@ You can create a child theme inside your theme. This is done by creating a folde
 **Example**  
 Let's say you want to change the css of a derived site. The best course of action is to create a new css file inside the original theme's assets folder, let's say `assets/css/my-css.css`. In this css file you can override the site's css to whatever you want. To load your extra css file, you need to override the existing file where all css files are loaded. Let's assume the optimal situation is the case, the theme builder made a partial for all assets:
 
-<p class='no-margin'><code class='highlighter-rouge'>layouts/theme.plate</code></p>
+<p class='no-margin'><code>layouts/theme.plate</code></p>
 ```liquid
 {%- raw -%}
 <head>
@@ -41,7 +41,7 @@ Let's say you want to change the css of a derived site. The best course of actio
 {% endraw %}
 ```
 
-<p class='no-margin'><code class='highlighter-rouge'>layouts/_asset_files.plate</code></p>
+<p class='no-margin'><code>layouts/_asset_files.plate</code></p>
 ```liquid
 {%- raw -%}
 {{ 'css/existing-css-file.css' | asset_url | stylesheet_tag }}
@@ -49,7 +49,7 @@ Let's say you want to change the css of a derived site. The best course of actio
 ```
 
 To load in your new css file, you'd need to override `layouts/_asset_files.plate` inside the `child_theme` folder:
-<p class='no-margin'><code class='highlighter-rouge'>child_theme/layouts/_asset_files.plate</code></p>
+<p class='no-margin'><code>child_theme/layouts/_asset_files.plate</code></p>
 ```liquid
 {%- raw -%}
 {{ 'css/existing-css-file.css' | asset_url | stylesheet_tag }}

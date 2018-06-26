@@ -109,11 +109,33 @@ If you do not create theme files with the same path in your own theme, these the
 
 ```liquid
 {%- raw -%}
-{% if image.link != "" %}
-  <a href="{{ image.link }}">{{ image.image.responsive_img_urls | img_tag }}</a>
-{% else %}
-  {{ image.image.responsive_img_urls | img_tag }}
-{% endif %}
+{% assign srcsets = nil %}{% assign sizes = nil %}
+  {% if image.image %}
+    {%- for viewport in site.viewports -%}
+      {%- assign img_width = column.viewport_options[viewport.name].avg_image_width -%}
+      
+      {%- assign srcset = image.image | img_url: img_width, crop: image.image.crop | append: " " | append: img_width | append: "w" -%}
+      {%- assign srcsets = srcsets | push: srcset -%}
+      
+      {%- assign size = img_width | append: "px" -%}
+      {%- if viewport.min_width > 0 -%}
+        {%- assign size = "(min-width:" | append: viewport.min_width | append: "px) " | append: size -%}
+      {%- endif -%}
+      {%- assign sizes = sizes | push: size -%}
+    {%- endfor -%}
+
+    {%- assign src = srcsets[0] | split: " " | first -%}
+    {%- assign srcsets = srcsets | join: "," -%}
+    {%- assign sizes = sizes | reverse | join: ", " -%}
+
+    {% if image.link != "" %}
+      <a href="{{ image.link }}">{{ src | img_tag: srcset: srcsets, sizes: sizes, inline_crop_for: image.image }}</a>
+    {% else %}
+      {{ src | img_tag: srcset: srcsets, sizes: sizes, inline_crop_for: image.image }}
+    {% endif %}
+  {% else %}
+    Geen afbeelding geselecteerd
+  {% endif %}
 {% endraw %}
 ```
 
