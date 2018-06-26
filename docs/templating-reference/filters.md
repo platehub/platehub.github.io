@@ -192,15 +192,15 @@ The default mode is `fit`.
 <div class="sample-images">
   <div class="sample-image">
     <img src="https://libpixel.libpx.com/test/dusk.jpg?width=240&amp;height=240&amp;mode=fit"/>
-    <code>mode=fit</code>
+    <code>mode: "fit"</code>
   </div>
   <div class="sample-image">
     <img src="https://libpixel.libpx.com/test/dusk.jpg?width=240&amp;height=240&amp;mode=crop"/>
-    <code>mode=crop</code>
+    <code>mode: "crop"</code>
   </div>
   <div class="sample-image">
     <img src="https://libpixel.libpx.com/test/dusk.jpg?width=240&amp;height=240&amp;mode=stretch"/>
-    <code>mode=stretch</code>
+    <code>mode: "stretch"</code>
   </div>
 </div>
 
@@ -220,11 +220,11 @@ Note: you can generate crop values by using [inline crop](#inline-cropping) on [
   </div>
   <div class="sample-image">
     <img src="https://libpixel.libpx.com/test/plant.jpg?width=240&amp;height=240&amp;mode=crop&amp;crop=100,100,1000,1000"/>
-    <code>crop=100,100,1000,1000</code>
+    <code>crop: "100,100,1000,1000"</code>
   </div>
   <div class="sample-image">
     <img src="https://libpixel.libpx.com/test/plant.jpg?width=240&amp;height=240&amp;mode=crop&amp;crop=500,500,1000,1000"/>
-    <code>crop=500,500,1000,1000</code>
+    <code>crop: "500,500,1000,1000"</code>
   </div>
 </div> 
 
