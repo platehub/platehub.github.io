@@ -158,6 +158,35 @@ Returns array of elements that have the column object as parent.
 {% raw %}{{ column.elements }}{% endraw %}
 ```
 
+#### column.viewport_options
+Returns an object with the column's viewport options. De available options are:
+
+- `avg_image_width`: returns the column's average image width for every viewport, or for a specific viewport.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ column.viewport_options.avg_image_width }}{% endraw %}
+```
+<p class='no-margin'>Output:</p>
+```text
+[360, 354, 466, 570]
+```
+
+<p class='no-margin'>Input (call for md viewport):</p>
+```liquid
+{%- raw -%}
+{{ column.viewport_options.xs.avg_image_width }}
+{{ column.viewport_options.md.avg_image_width }}
+{% endraw %}
+```
+<p class='no-margin'>Output:</p>
+```text
+360
+466
+```
+
+If the viewport breakpoint is `< 768px` it is assumed the viewport is intended for mobile devices. In this case  `avg_image_width` returns `360`, since most mobile devices are not wider than `360px`.
+
 ___
 
 ## content_type
