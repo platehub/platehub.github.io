@@ -153,7 +153,7 @@ Creates a thumbnail for an image [attachment](/docs/templating-reference/objects
 
 <p class='no-margin'>Output:</p>
 ```text
-https://plate.libpx.com/eu-west-1/img/12ab34cd56/my-image.jpg?width=300
+https://plate-assets.com/img/12ab34cd56/my-image.jpg?width=300
 ```
 
 If you only pass the one argument (width) the aspect ratio is maintained. You can add the height argument to force dimensions, but also arguments like blur and dpr to create a thumbnail of the image to your liking.
@@ -167,7 +167,7 @@ If you only pass the one argument (width) the aspect ratio is maintained. You ca
 
 <p class='no-margin'>Output:</p>
 ```text
-https://plate.libpx.com/eu-west-1/img/12ab34cd56/my-image.jpg?width=300&height=200&mode=stretch&blur=5
+https://plate-assets.com/img/12ab34cd56/my-image.jpg?width=300&height=200&mode=stretch&blur=5
 ```
 
 Note: `img_url` only works on an [attachment](/docs/templating-reference/objects#attachment) or the [attachment src (`attachment.src`)](/docs/templating-reference/objects#attachmentsrc).
@@ -302,6 +302,8 @@ Converts a string to a parameter.
 ```text
 "hi_there_how_are_we_doing_today"
 ```
+
+___
 
 ## pop
 Removes the last element from an array and returns array with remaining elements. If an integer is passed as argument, this amount of elements will be removed.
