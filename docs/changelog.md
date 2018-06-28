@@ -9,10 +9,15 @@ page_url: /docs/changelog
 ### Coming up
 
 - Caching
-- Image processing
 - API
-- Restructuring client S3 buckets
 - Wizard
+
+### June 2018
+- Image pre-processing
+- `img_url` filter
+- S3 buckets restructered (Plate centered instead of client centered)
+- Redefining responsive images
+- Minor bugfixes
 
 ### May 2018
 - Improved function calling on OOP instances, in the case of client-created content fields.
