@@ -12,12 +12,18 @@ page_url: /docs/changelog
 - API
 - Wizard
 
+<<<<<<< HEAD
 ### July 2018
 - Refactored and simplified form functionality.
 
 ### June 2018
 - Image pre-processing
 - img_url filter
+=======
+### June 2018
+- Image pre-processing
+- `img_url` filter
+>>>>>>> 15ac7b52e962a2f6f1c74a9019530d91a4e083ea
 - S3 buckets restructered (Plate centered instead of client centered)
 - Redefining responsive images
 - Minor bugfixes
