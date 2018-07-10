@@ -12,6 +12,8 @@ sub_menu_sub:
   - "[asset_url](#asset_url)"
   - "[empty?](#empty)"
   - "[global_asset_url](#global_asset_url)"
+  - "[html_input](#html_input)"
+  - "[html_input_name](#html_input_name)"
   - "[img_tag](#img_tag)"
   - "[img_url](#img_url)"
   - "[not_empty?](#not_empty)"
@@ -106,6 +108,58 @@ Note that this method of loading jQuery is highly preferred over doing it yourse
 
 ___
 
+## html_input
+
+Returns an HTML input tag. The argument provided to this filter will be used as the
+input name. The filter accepts an input type as extra argument (such as `text`, `textarea`, `checkbox`).
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{{ "input_field_name" | html_input: "text" }}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<input type="text" name="input_field_name">
+```
+
+Note that it might be useful to use this filter in combination with the [html_input_name](/docs/templating-reference/filters#html_input_name)
+as follows:
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{{ "Name" | html_input_name | html_input: "checkbox" }}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<input type="checkbox" name="form_message[content][name]">
+```
+___
+
+## html_input_name
+
+Returns a string that can be used as name for HTML input tags. This filter has to be used
+to ensure that an input field is processed correctly by Plate, when using the [form](/docs/templating-reference/tags#form) tag.
+The input for this filter is the name that represents the field, for example "Naam" or "Email".
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{{ "Name" | html_input_name }}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+form_message[content][name]
+```
+___
+
 ## img_tag
 
 Returns an HTML image tag. You can pass a string or a series of `key:value` arguments to set HTML attributes.
@@ -124,7 +178,7 @@ Returns an HTML image tag. You can pass a string or a series of `key:value` argu
 <img src="path-to-image.jpg" class="image-class" alt="image-alt">
 ```
 
-If the image is set by a [media field](/docs/content-fields#media-field), it is possible to enable inline cropping on the image. This way the user can match the image's size to it's neighbours for example. 
+If the image is set by a [media field](/docs/content-fields#media-field), it is possible to enable inline cropping on the image. This way the user can match the image's size to it's neighbours for example.
 
 #### Inline cropping
 Enable inline cropping by adding the `inline_crop_for` argument. The value of the argument must be the attachment object you get by calling the media field's name on the content object. E.g. calling `post.featured_image` returns an attachment object. [(Read more on attachments)](/docs/templating-reference/objects#attachment).
@@ -142,7 +196,7 @@ ___
 
 ## img_url
 
-Creates a thumbnail for an image [attachment](/docs/templating-reference/objects#attachment) and returns it's url. You can pass a width parameter and extra arguments with the `img_url` filter to define what thumbnail you want. The first parameter is the width. 
+Creates a thumbnail for an image [attachment](/docs/templating-reference/objects#attachment) and returns it's url. You can pass a width parameter and extra arguments with the `img_url` filter to define what thumbnail you want. The first parameter is the width.
 
 <p class='no-margin'>Input:</p>
 ```liquid
@@ -210,7 +264,7 @@ The default mode is `fit`.
   </div>
 </div>
 
-#### `crop` 
+#### `crop`
 Allows you to specify which part of the image is used.
 
 To crop an image, you specify four parameters – the origin x and y (which defines the top left of the crop rectangle) and the dimensions w and h (which define the size of the rectangle).
@@ -232,7 +286,7 @@ Note: you can generate crop values by using [inline crop](#inline-cropping) on [
     <img src="https://libpixel.libpx.com/test/plant.jpg?width=240&amp;height=240&amp;mode=crop&amp;crop=500,500,1000,1000"/>
     <code>crop: "500,500,1000,1000"</code>
   </div>
-</div> 
+</div>
 
 #### `dpr`
 Specifies the device pixel ratio, between `0.1` and `10.0`.
@@ -247,14 +301,14 @@ The default dpr is `1.0`.
 Blurs the image by a value relative to the image size, between `0` and `100`. The default blur value is `0` (no blur).
 
 #### `brightness`, `contrast`, `hue`, `saturation` and `gamma`
-For each image setting of `brightness`, `contrast`, `hue`, `saturation` and `gamma`, it adjusts the setting of the image, with values between `-100` and `100`. 
+For each image setting of `brightness`, `contrast`, `hue`, `saturation` and `gamma`, it adjusts the setting of the image, with values between `-100` and `100`.
 
 The default value is `0` (no adjustment).
 
-A saturation value of `-100` turns the image into grayscale. 
+A saturation value of `-100` turns the image into grayscale.
 
 #### `quality`
-Sets the quality of the output image, with values between `0` and `100`. This setting only affects JPEG images. Higher quality values result in images with a larger file size. 
+Sets the quality of the output image, with values between `0` and `100`. This setting only affects JPEG images. Higher quality values result in images with a larger file size.
 
 The default quality is `85`, which is also recommended, since it's a perfect balance between file size and image quality.
 
@@ -331,7 +385,7 @@ Removes the last element from an array and returns array with remaining elements
 ___
 
 ## push
-Appends an element to the end of an array. 
+Appends an element to the end of an array.
 
 <p class='no-margin'>Input:</p>
 ```liquid

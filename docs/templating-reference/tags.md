@@ -9,21 +9,19 @@ sub_menu:
   - "[Filters](/docs/templating-reference/filters)"
   - "[Objects](/docs/templating-reference/objects)"
 sub_menu_sub:
-  - "[contact_form](#contact_form)"
   - "[content_for](#content_for)"
   - "[edit_text_inline](#edit_text_inline)"
-  - "[form_field](#form_field)"
-  - "[form_label](#form_label)"
-  - "[form_sender_field](#form_sender_field)"
+  - "[form](#form)"
   - "[http_request](#http_request)"
   - "[include](#include)"
   - "[layout](#layout)"
   - "[paginate](#paginate)"
+  - "[register_form_field](#register_form_field)"
   - "[tray](#tray)"
 ---
 
-## contact_form
-Renders an HTML contact form that sends out an email to the passed email address, and saves the message to the database, so the user can find it under 'Messages' in the site dashboard.
+## form
+Renders an HTML form that sends out an email to the passed email address, and saves the message to the database, so the user can find it under 'Messages' in the site dashboard.
 
 Accepts the following arguments:
 
@@ -33,27 +31,26 @@ the Plate object that represents the form. This is usually an object with the de
 `to`  
 the email addres where the message is sent. (Required)
 
-`fields`  
-array of objects that represent the [fields](#form_field). At least the `required_attr` value must be a valid attribute to call on the field. (Required)
-
-`required_attr`  
-The attribute that is called on the fields to determine whether that field is required or not. Calling `required_attr` on the fields must return `true` or `false`. (Required)
-
 `error_msg`  
-The error message that is used in the '[request](/docs/templating-reference/objects#request)' object (`alert` attribute) when the form is invalid and doesn't get sent. (Not requird, default: 'Something went wrong while sending the message.')
+The error message that is used in the '[request](/docs/templating-reference/objects#request)' object (`alert` attribute) when the form is invalid and doesn't get sent. (Not required, default: 'Something went wrong while sending the message.')
 
 `success_msg`  
 same as `error_msg`, but for the message when the form does send ([request](/docs/templating-reference/objects#request) attribute: `notice`). (Not required, default: 'Thank you for your message. We will reply as soon as possible.')
 
+`success_url`  
+The url where the user is redirected to after a successful form submission. (Not required, by default the user gets redirected to the page where the submitted form was located)
+
 <p class='no-margin'>Input:</p>
 ```liquid
 {%- raw -%}
-{% contact_form to: contact_form.email, fields: contact_form.field_lines, required_attr: "required" %}
-  {% for field in fields %}
+{% form for: form, to: form.email, success_url: form.success_page_link %}
+  {% for field in form.field_lines %}
     {% include field %}
   {% endfor %}
-  <div><input type="submit" value="Send"></div>
-{% endcontact_form %}
+  <div>
+    <input type="submit" >
+  </div>
+{% endform %}
 {% endraw %}
 ```
 
@@ -70,7 +67,7 @@ Every other attribute that you pass will be parsed as HTML attribute in the HTML
 <p class='no-margin'>Input:</p>
 ```liquid
 {%- raw -%}
-{% contact_form class: "contact-form" %}
+{% form class: "contact-form" %}
 {% endraw %}
 ```
 
@@ -160,7 +157,7 @@ Renders regular HTML of a [text area](/docs/content-fields#text-area) value, but
 ___
 
 ## form_field
-Input field for a form. Only works inside `contact_form` tag. The first argument is the Plate object that represents a field. The second argument is the field's attribute name that returns the input name. The third argument is the field's type, which must be one of `text`, `textarea` and `checkbox`.
+Input field for a form. Only works inside `form` tag. The first argument is the Plate object that represents a field. The second argument is the field's attribute name that returns the input name. The third argument is the field's type, which must be one of `text`, `textarea` and `checkbox`.
 
 <p class='no-margin'>Input:</p>
 ```liquid
@@ -189,7 +186,7 @@ You can add custom html attributes, by passing `key: value` arguments, after the
 ___
 
 ## form_label
-Label HTML tag for a form. Only works inside `contact_form` tag. Like `form_field`, the first argument is the Plate object that represents a field. The second argument is the field's attribute name that returns the label value.
+Label HTML tag for a form. Only works inside `form` tag. Like `form_field`, the first argument is the Plate object that represents a field. The second argument is the field's attribute name that returns the label value.
 
 <p class='no-margin'>Input:</p>
 ```liquid
@@ -204,7 +201,7 @@ Label HTML tag for a form. Only works inside `contact_form` tag. Like `form_fiel
 ___
 
 ## form_sender_field
-Generates form input fields, but for the sender's data. This way Plate knows what field values represent the sender's name and email. Must also be called inside the `contact_form` tag. Accepts one argument, which must be one of two values: `sender_field_name` or `sender_field_email`.
+Generates form input fields, but for the sender's data. This way Plate knows what field values represent the sender's name and email. Must also be called inside the `form` tag. Accepts one argument, which must be one of two values: `sender_field_name` or `sender_field_email`.
 
 <p class='no-margin'>Input:</p>
 ```liquid
@@ -404,6 +401,29 @@ Inside the `paginate` block, a `paginate` object is available with the following
 - `next`: represents the next pagination page. Also has `url`, `index` and `is_link` attributes.
 - `previous`: represents the previous pagination page. Also has `url`, `index` and `is_link` attributes.
 
+___
+
+## register_form_field
+
+Registers a form field by name, in Plate. This ensures that when a form is submitted
+Plate expects this form, and possibly validates the field. Hence it an only be used
+ within a [form](/docs/templating-reference/tags#form) block. It accepts the name of
+ the field as an input (for example "Naam" or "Email"), but also whether this field
+ should be validated (with the `required` argument).
+
+ Accepts the following arguments (excluding the first argument, which is the name):
+
+ `required`  
+ whether the registered field should be validated on presence. (Default: `false`)
+
+ <p class='no-margin'>Example:</p>
+ ```liquid
+ {% raw %}{% register_form_field field_line.name, required: field_line.required %}{% endraw %}
+ ```
+
+Note that this tag does not directly output anything in the HTML. In the background
+ this tag adds some information to a hash that is generated by the [form](/docs/templating-reference/tags#form) tag.
+ 
 ___
 
 ## tray
