@@ -16,8 +16,11 @@ page_url: /docs/changelog
 - Refactored and simplified form functionality.
 
 ### June 2018
-- Image processing
-- Restructuring client S3 buckets
+- Image pre-processing
+- img_url filter
+- S3 buckets restructered (Plate centered instead of client centered)
+- Redefining responsive images
+- Minor bugfixes
 
 ### May 2018
 - Improved function calling on OOP instances, in the case of client-created content fields.
