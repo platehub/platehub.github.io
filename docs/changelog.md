@@ -9,10 +9,15 @@ page_url: /docs/changelog
 ### Coming up
 
 - Caching
-- Image processing
 - API
-- Restructuring client S3 buckets
 - Wizard
+
+### July 2018
+- Refactored and simplified form functionality.
+
+### June 2018
+- Image processing
+- Restructuring client S3 buckets
 
 ### May 2018
 - Improved function calling on OOP instances, in the case of client-created content fields.
