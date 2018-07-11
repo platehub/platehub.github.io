@@ -112,17 +112,18 @@ ___
 
 Returns an HTML input tag. The argument provided to this filter will be used as the
 input name. The filter accepts an input type as extra argument (such as `text`, `textarea`, `checkbox`).
+All extra arguments will be parsed as HTML attributes.
 
 <p class='no-margin'>Input:</p>
 ```liquid
 {%- raw -%}
-{{ "input_field_name" | html_input: "text" }}
+{{ "input_field_name" | html_input: "text", class: "form-textbox" }}
 {% endraw %}
 ```
 
 <p class='no-margin'>Output:</p>
 ```html
-<input type="text" name="input_field_name">
+<input type="text" name="input_field_name" class="form-textbox">
 ```
 
 Note that it might be useful to use this filter in combination with the [html_input_name](/docs/templating-reference/filters#html_input_name)
