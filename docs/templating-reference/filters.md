@@ -11,9 +11,9 @@ sub_menu:
 sub_menu_sub:
   - "[asset_url](#asset_url)"
   - "[empty?](#empty)"
+  - "[form_input_name](#form_input_name)"
   - "[global_asset_url](#global_asset_url)"
   - "[html_input](#html_input)"
-  - "[html_input_name](#html_input_name)"
   - "[img_tag](#img_tag)"
   - "[img_url](#img_url)"
   - "[not_empty?](#not_empty)"
@@ -64,7 +64,25 @@ false
 
 ___
 
+## form_input_name
+
+Returns a string that can be used as name for HTML input tags inside the the [form](/docs/templating-reference/tags#form) Liquid tag. This filter must be used to ensure that an input field is processed correctly by Plate. The input for this filter is the name that represents the field, for example "Naam" or "Email".
+
+<p class='no-margin'>Input:</p>
+```liquid
+{%- raw -%}
+{{ "Name" | form_input_name }}
+{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+form_message[content][name]
+```
+___
+
 ## global_asset_url
+
 Returns the url of a 'global asset'. Global assets are commonly used assets. By using these url's as input for a `script_tag` or `stylesheet_tag` you don't have to upload them yourself. Usually the url's are of the recommended CDN's.
 
 The filter accepts two possible arguments: asset type (css/js) and version (default value depending on asset).
@@ -126,13 +144,13 @@ All extra arguments will be parsed as HTML attributes.
 <input type="text" name="input_field_name" class="form-textbox">
 ```
 
-Note that it might be useful to use this filter in combination with the [html_input_name](/docs/templating-reference/filters#html_input_name)
+Note that it might be useful to use this filter in combination with the [form_input_name](/docs/templating-reference/filters#form_input_name)
 as follows:
 
 <p class='no-margin'>Input:</p>
 ```liquid
 {%- raw -%}
-{{ "Name" | html_input_name | html_input: "checkbox" }}
+{{ "Name" | form_input_name | html_input: "checkbox" }}
 {% endraw %}
 ```
 
@@ -140,25 +158,7 @@ as follows:
 ```html
 <input type="checkbox" name="form_message[content][name]">
 ```
-___
 
-## html_input_name
-
-Returns a string that can be used as name for HTML input tags. This filter has to be used
-to ensure that an input field is processed correctly by Plate, when using the [form](/docs/templating-reference/tags#form) tag.
-The input for this filter is the name that represents the field, for example "Naam" or "Email".
-
-<p class='no-margin'>Input:</p>
-```liquid
-{%- raw -%}
-{{ "Name" | html_input_name }}
-{% endraw %}
-```
-
-<p class='no-margin'>Output:</p>
-```html
-form_message[content][name]
-```
 ___
 
 ## img_tag
