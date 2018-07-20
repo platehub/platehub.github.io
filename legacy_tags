@@ -1,0 +1,70 @@
+___
+
+## form_field
+Input field for a form. Only works inside `form` tag. The first argument is the Plate object that represents a field. The second argument is the field's attribute name that returns the input name. The third argument is the field's type, which must be one of `text`, `textarea` and `checkbox`.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{% form_field field_line, "name", field_line.type %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<!-- field_line.type = "text" -->
+<!-- field_line.name = "Test Field"  -->
+<input type="text" name="form_message[content][test_field]" id="3864_test_field">
+```
+
+You can add custom html attributes, by passing `key: value` arguments, after the third 'type' argument.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{% form_field field_line, "name", field_line.type, data_test_data: "data-test-value", placeholder: "My Placeholder" %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<input type="text" name="form_message[content][test_field]" id="3864_test_field" data-test-data="data-test-value" placeholder="My Placeholder">
+```
+
+___
+
+## form_label
+Label HTML tag for a form. Only works inside `form` tag. Like `form_field`, the first argument is the Plate object that represents a field. The second argument is the field's attribute name that returns the label value.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{% form_label field_line, "name" %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<label for="3864_test_field">Test Field</label>
+```
+
+___
+
+## form_sender_field
+Generates form input fields, but for the sender's data. This way Plate knows what field values represent the sender's name and email. Must also be called inside the `form` tag. Accepts one argument, which must be one of two values: `sender_field_name` or `sender_field_email`.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{% form_sender_field "sender_field_email" %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<input type="text" name="form_message[meta][sender][email]" id="1876_sender_field_email">
+```
+
+Like the regular form_fields, you can add custom html attributes, by passing `key: value` arguments.
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{% form_sender_field "sender_field_email", data_test_data: "data-test-value", placeholder: "My Placeholder" %}{% endraw %}
+```
+
+<p class='no-margin'>Output:</p>
+```html
+<input type="text" name="form_message[meta][sender][email]" id="1876_sender_field_email" data-test-data="data-test-value" placeholder="My Placeholder">
+```

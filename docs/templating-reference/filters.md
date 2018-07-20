@@ -128,8 +128,8 @@ ___
 
 ## html_input
 
-Returns an HTML input tag. The argument provided to this filter will be used as the
-input name. The filter accepts an input type as extra argument (such as `text`, `textarea`, `checkbox`).
+Returns an HTML input tag. The filter's input will be the `name` attribute for the HTML tag. The filter accepts an extra argument which is tht HTML input's type (such as `text`, `textarea`, `checkbox`).
+
 All extra arguments will be parsed as HTML attributes.
 
 <p class='no-margin'>Input:</p>
@@ -144,8 +144,7 @@ All extra arguments will be parsed as HTML attributes.
 <input type="text" name="input_field_name" class="form-textbox">
 ```
 
-Note that it might be useful to use this filter in combination with the [form_input_name](/docs/templating-reference/filters#form_input_name)
-as follows:
+Note that it might be useful to use this filter in combination with the [form_input_name](#form_input_name) as follows:
 
 <p class='no-margin'>Input:</p>
 ```liquid
