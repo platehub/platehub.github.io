@@ -11,6 +11,13 @@ page_url: /docs/changelog
 - Caching
 - API
 - Wizard
+- Content library for partners
+
+### August 2018
+- Safe deletion of (unused) sites, companies, themes and users.
+- Automated partner demo account signup
+- Added regular expressions for content field validations
+
 
 ### July 2018
 - Refactored and simplified form functionality.
