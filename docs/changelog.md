@@ -14,6 +14,9 @@ page_url: /docs/changelog
 - Content library for partners
 
 ### August 2018
+- Show screenshots of themes and sites in dashboard
+- Enabled searching of tables in dashboard
+- Array content field added
 - Safe deletion of (unused) sites, companies, themes and users.
 - Automated partner demo account signup
 - Added regular expressions for content field validations
