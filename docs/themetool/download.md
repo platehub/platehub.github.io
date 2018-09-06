@@ -8,26 +8,37 @@ sub_menu:
 ---
 On this page you can find the latest version of the Themetool, and also find older versions of the Themetool. Of course it is advised to only use the latest version!
 
-## Latest version (1.2) - 29 August 2018
+## Latest version (1.3) - 6 September 2018
 
-<a href="https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.2/plate-themetool.1.2.dmg" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-apple"></i> Download for Mac</a>
-<a href="https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.2/plate_setup.1.2.exe" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-windows"></i> Download for Windows</a>
+<a href="https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.3/plate-themetool.1.3.dmg" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-apple"></i> Download for Mac</a>
+<a href="https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.3/plate_setup.1.3.exe" class="btn btn-primary btn-lg"><i class="fa fa-fw fa-windows"></i> Download for Windows</a>
 
-Or Linux users, [download the JAR file](https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.2/plate-themetool.1.2.jar), which works on every OS with Java installed.
+Or Linux users, [download the JAR file](https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.3/plate-themetool.1.3.jar), which works on every OS with Java installed.
 
 ### Changes
+
+- Fixed bug where uploading of new files during auto-update caused troubles.
+
+
+## Older versions
+### Version 1.2 - 29 August 2018
+#### Download
+- [Windows](https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.2/plate_setup.1.2.exe)
+- [Mac](https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.2/plate-themetool.1.2.dmg)
+- [Linux](https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.2/plate-themetool.1.2.jar)
+
+#### Changes
 
 - Optimized uploading algorithm
 - Faster file change listener on Mac
 
-
-## Older versions
 ### Version 1.1 - 2 February 2018
+#### Download
 - [Windows](https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.1/plate_setup.1.1.exe)
 - [Mac](https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.1/plate-themetool.1.1.dmg)
 - [Linux](https://s3-eu-west-1.amazonaws.com/plate-themetool/v1.1/plate-themetool.1.1.jar)
 
-### Changes
+#### Changes
 
 - Added some tooltips to clarify input fields
 - Added storing of log files
