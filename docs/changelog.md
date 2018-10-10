@@ -13,6 +13,10 @@ page_url: /docs/changelog
 - Wizard
 - Content library for partners
 
+### September 2018
+- Version Control
+- Dashboard look and feel updates
+
 ### August 2018
 - Show screenshots of themes and sites in dashboard
 - Enabled searching of tables in dashboard
