@@ -13,6 +13,13 @@ page_url: /docs/changelog
 - Wizard
 - Content library for partners
 
+### November 2018
+- WYSIWYG text editor for edit screens
+- Internal refactoring codebase, utilizing coding design patterns like services and form objects
+- Multilanguage trays
+- Improved section editing
+- Added possibility to switch between custom and public themes
+
 ### September 2018
 - Version Control
 - Dashboard look and feel updates
