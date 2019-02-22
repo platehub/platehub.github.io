@@ -13,6 +13,13 @@ page_url: /docs/changelog
 - Wizard
 - Content library for partners
 
+### February 2019
+- First beta API implementations
+- Multilanguage improvements
+
+### January 2019
+- Multiple bug fixes
+
 ### November 2018
 - WYSIWYG text editor for edit screens
 - Internal refactoring codebase, utilizing coding design patterns like services and form objects
