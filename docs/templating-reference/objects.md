@@ -429,9 +429,9 @@ Returns an array of objects representing the available languages for the site.
 <p class='no-margin'>Output:</p>
 ```text
 [
-  "shortcode" => "nl", "name" => "Dutch, "url" => "/dutch-url",
-  "shortcode" => "en", "name" => "English, "url" => "/en/english-url",
-  "shortcode" => "de", "name" => "German, "url" => "/de/german-url"
+  { "shortcode" => "nl", "name" => "Dutch, "url" => "/dutch-url" },
+  { "shortcode" => "en", "name" => "English, "url" => "/en/english-url" },
+  { "shortcode" => "de", "name" => "German, "url" => "/de/german-url }"
 ]
 ```
 
