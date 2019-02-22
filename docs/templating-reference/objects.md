@@ -436,3 +436,20 @@ Returns an array of objects representing the available languages for the site.
 ```
 
 The url attribute returns the url of the translation for the Post you are on. If there is no translation found, the root url for the language is returned. E.g. '/en' for English, '/fr' for French, and so on.
+
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}
+{% for language in site.languages %}
+  <a href="{{ language.url }}">{{ language.name }}</a>
+{% endfor %}
+{% endraw %}
+```
+<p class='no-margin'>Output:</p>
+```html
+<a href="/dutch-url">Dutch</a>
+<a href="/en/english-url">English</a>
+<a href="/de">German</a> <!-- uses root german url if no translation is found !>
+
+```
