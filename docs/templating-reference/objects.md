@@ -282,7 +282,10 @@ Returns post SEO description.
 Returns [content_type](#content_type) object.
 
 #### post.parent
-Returns parent, if there is a parent set in de Post settings.
+Returns parent, if there is a parent set in the Post settings.
+
+#### post.translations
+Returns an array of translations of the Post. Can be empty.
 
 ___
 
@@ -415,3 +418,21 @@ Returns the site's primary full domain. E.g. www.my-plate-site.com.
 
 #### site.:plural_post_type_name
 Returns all posts (objects with the specified [post type](/docs/content-types#layoutable-posts-post-types)). E.g. `{% raw %}{{ site.pages }}{% endraw %}` returns all posts with the content type 'page'. Adding `_index` returns the index post (the post with the index template). E.g. `{% raw %}{{ site.pages_index }}{% endraw %}`.
+
+#### site.languages
+Returns an array of objects representing the available languages for the site. 
+
+<p class='no-margin'>Input:</p>
+```liquid
+{% raw %}{{ site.languages }}{% endraw %}
+```
+<p class='no-margin'>Output:</p>
+```text
+[
+  "shortcode" => "nl", "name" => "Dutch, "url" => "/dutch-url",
+  "shortcode" => "en", "name" => "English, "url" => "/en/english-url",
+  "shortcode" => "de", "name" => "German, "url" => "/de/german-url"
+]
+```
+
+The url attribute returns the url of the translation for the Post you are on. If there is no translation found, the root url for the language is returned. E.g. '/en' for English, '/fr' for French, and so on.
