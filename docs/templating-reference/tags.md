@@ -26,7 +26,7 @@ Renders an HTML form that sends out an email to the passed email address, and sa
 Accepts the following arguments:
 
 `for`  
-the Plate object that represents the form. This is usually an object with the default 'contact_form' content type. (Not required when called in theme file for [default contact_form content type](/docs/content-types#default-content-types))
+the Plate object that represents the form. (Required)
 
 `to`  
 the email addres where the message is sent. (Required)
